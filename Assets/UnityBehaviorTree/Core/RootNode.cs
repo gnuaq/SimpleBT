@@ -1,7 +1,20 @@
 ﻿namespace UnityBehaviorTree.Core
 {
-    public class RootNode : Node
+    public class RootNode : BTNode
     {
+        private BTNode _child;
+        
+        public BTNode Child
+        {
+            set => _child = value;
+            get => _child;
+        }
+
+        public RootNode(BTNode child)
+        {
+            _child = child;
+        }
+
         protected override void OnStart()
         {
         }
@@ -10,9 +23,15 @@
         {
         }
 
-        protected override Status OnUpdate()
+        protected override EStatus OnUpdate()
         {
-            return Status.Success;
+            _child.Tick();
+            return _status = _child.Status;
+        }
+        
+        public override BTNode Clone()
+        {
+            return (BTNode)this.MemberwiseClone();
         }
     }
 }

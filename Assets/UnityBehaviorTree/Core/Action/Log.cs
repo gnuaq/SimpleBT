@@ -7,6 +7,11 @@ namespace UnityBehaviorTree.Core.Action
     {
         [SerializeField]
         private string _msg = "abc";
+
+        public Log(string Msg)
+        {
+            _msg = Msg;
+        }
         
         protected override void OnStart()
         {
@@ -16,10 +21,10 @@ namespace UnityBehaviorTree.Core.Action
         {
         }
 
-        protected override Status OnUpdate()
+        protected override EStatus OnUpdate()
         {
             Debug.Log($"Log: {_msg}");
-            _status = Status.Success;
+            _status = EStatus.Success;
             return _status;
         }
     }

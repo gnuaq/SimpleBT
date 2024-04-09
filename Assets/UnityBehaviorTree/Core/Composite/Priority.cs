@@ -1,19 +1,18 @@
 ﻿using System.Collections.Generic;
-using UnityEngine.SubsystemsImplementation;
 
 namespace UnityBehaviorTree.Core.Composite
 {
-    public class Sequence : CompositeNode
+    public class Priority : CompositeNode
     {
         protected int _current = 0;
         
-        public Sequence() : base() { }
+        public Priority() : base() { }
         
-        public Sequence(List<BTNode> children) : base()
+        public Priority(List<BTNode> children) : base()
         {
             _children = children;
         }
-
+        
         protected override void OnStart()
         {
             _current = 0;
@@ -23,7 +22,7 @@ namespace UnityBehaviorTree.Core.Composite
         {
         }
 
-        protected override EStatus OnUpdate()
+        protected override BTNode.EStatus OnUpdate()
         {
             for (int i = _current; i < _children.Count; ++i)
             {
@@ -31,18 +30,18 @@ namespace UnityBehaviorTree.Core.Composite
                 _children[i].Tick();
                 switch (_children[i].Status)
                 {
-                    case EStatus.Running:
-                        return _status = EStatus.Running;
-                    case EStatus.Success:
+                    case BTNode.EStatus.Running:
+                        return _status = BTNode.EStatus.Running;
+                    case BTNode.EStatus.Success:
+                        return _status = BTNode.EStatus.Success;
+                    case BTNode.EStatus.Failed:
                         continue;
-                    case EStatus.Failed:
-                        return _status = EStatus.Failed;
                     default:
-                        return _status = EStatus.Failed;
+                        return _status = BTNode.EStatus.Failed;
                 }
             }
 
-            return _status = EStatus.Success;
+            return _status = BTNode.EStatus.Failed;
         }
     }
 }

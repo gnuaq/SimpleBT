@@ -11,6 +11,11 @@ namespace UnityBehaviorTree.Core.Action
 
         private float _time;
 
+        public Wait(float duration)
+        {
+            _duration = duration;
+        }
+
         protected override void OnStart()
         {
             _time = 0;
@@ -20,16 +25,16 @@ namespace UnityBehaviorTree.Core.Action
         {
         }
 
-        protected override Status OnUpdate()
+        protected override EStatus OnUpdate()
         {
             if (_time < _duration)
             {
                 _time += Time.deltaTime;
-                _status = Status.Running;
+                _status = EStatus.Running;
             }
             else
             {
-                _status =  Status.Success;
+                _status =  EStatus.Success;
             }
 
             return _status;

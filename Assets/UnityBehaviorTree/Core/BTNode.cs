@@ -3,9 +3,9 @@
 namespace UnityBehaviorTree.Core
 {
     [System.Serializable]
-    public abstract class Node
+    public abstract class BTNode
     {
-        public enum Status
+        public enum EStatus
         {
             None,
             Running,
@@ -13,12 +13,16 @@ namespace UnityBehaviorTree.Core
             Success,
         }
 
-        public Status _status { protected set; get; }
-        public bool _started { private set; get; }
+        private bool _started;
+        
+        protected EStatus _status;
 
-        public Node()
+        public EStatus Status => _status;
+        public bool Started => _started;
+
+        public BTNode()
         {
-            _status = Status.None;
+            _status = EStatus.None;
             _started = false;
         }
 
@@ -32,20 +36,21 @@ namespace UnityBehaviorTree.Core
 
             OnUpdate();
 
-            if (_status != Status.Running)
+            if (_status != EStatus.Running)
             {
                 OnStop();
                 _started = false;
             }
         }
 
-        protected void Attach(Node node)
+        protected void Attach(BTNode node)
         {
             
         }
 
         protected abstract void OnStart();
         protected abstract void OnStop();
-        protected abstract Status OnUpdate();
+        protected abstract EStatus OnUpdate();
+        public abstract BTNode Clone();
     }
 }
