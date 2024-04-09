@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/UnityBehaviorTree/Editor/Resources/BehaviorTreeWindow.uss?fileID=7433441132597879392&amp;guid=9143bbad347b25d48871d4d01c5e0cf4&amp;type=3#BehaviorTreeWindow" />
+    <ui:VisualElement name="Toolbar">
+        <uie:Toolbar />
+    </ui:VisualElement>
+    <ui:VisualElement name="Content" style="flex-grow: 1;">
+        <UnityBehaviorTree.Editor.View.BTGraphView focusable="true" style="flex-grow: 1;" />
+    </ui:VisualElement>
+</ui:UXML>
