@@ -50,7 +50,7 @@ namespace UnityBehaviorTree.Editor
         public void LoadBehaviorTree(int instanceID)
         {
             string assetPath = AssetDatabase.GetAssetPath(instanceID);
-            _graphView.LoadBehaviorTree(AssetDatabase.LoadAssetAtPath<BehaviorTree>(assetPath));
+            _graphView.BehaviorTree = AssetDatabase.LoadAssetAtPath<BehaviorTree>(assetPath);
         }
 
         public void LoadConfigAsset()

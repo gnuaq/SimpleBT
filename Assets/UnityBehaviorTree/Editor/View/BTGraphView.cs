@@ -15,6 +15,12 @@ namespace UnityBehaviorTree.Editor.View
 
         private BehaviorTree _behaviorTree;
         
+        public BehaviorTree BehaviorTree
+        {
+            set => _behaviorTree = value;
+            get => _behaviorTree;
+        }
+        
         public BTGraphView()
         {
             this.AddManipulator(new ContentZoomer());
@@ -32,11 +38,6 @@ namespace UnityBehaviorTree.Editor.View
             };
 
             graphViewChanged += OnGraphViewChanged;
-        }
-
-        public void LoadBehaviorTree(BehaviorTree behaviorTree)
-        {
-            _behaviorTree = behaviorTree;
         }
         
         private GraphViewChange OnGraphViewChanged(GraphViewChange graphViewChange)
