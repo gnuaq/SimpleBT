@@ -2,6 +2,7 @@
 using UnityBehaviorTree.Core;
 using UnityBehaviorTree.Core.Action;
 using UnityEditor.Experimental.GraphView;
+using UnityEngine;
 
 namespace UnityBehaviorTree.Editor.View
 {
@@ -15,8 +16,22 @@ namespace UnityBehaviorTree.Editor.View
             get { return _btNode; }
         }
         
-        public BTNodeView(NodeViewData nodeViewData)
+        public BTNodeView(BTNode node)
         {
+            _btNode = node;
+            
+            SetNodeViewData();
+        }
+
+        private void SetNodeViewData()
+        {
+            if (_btNode.NodeViewData is null)
+            {
+                Debug.Log("NodeViewData is Null");
+                return;
+            }
+                
+            var nodeViewData = _btNode.NodeViewData;
             if (!string.IsNullOrEmpty(nodeViewData.Title))
                 title = nodeViewData.Title;
             if (nodeViewData.HasInputPort)

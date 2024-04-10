@@ -13,7 +13,7 @@ namespace UnityBehaviorTree.Editor.View
     {
         public new class UxmlFactory : UxmlFactory<BTGraphView, GraphView.UxmlTraits> { }
 
-        private List<BTNodeView> _btNodeViews = new List<BTNodeView>();
+        private BehaviorTree _behaviorTree;
         
         public BTGraphView()
         {
@@ -30,20 +30,33 @@ namespace UnityBehaviorTree.Editor.View
             {
                 AddNode(new Wait(3));
             };
+
+            graphViewChanged += OnGraphViewChanged;
+        }
+
+        public void LoadBehaviorTree(BehaviorTree behaviorTree)
+        {
+            _behaviorTree = behaviorTree;
+        }
+        
+        private GraphViewChange OnGraphViewChanged(GraphViewChange graphViewChange)
+        {
+            if (graphViewChange.elementsToRemove != null)
+            {
+                
+            }
+            return graphViewChange;
         }
 
         public void AddNode(BTNode node)
         {
-            BTNodeView btNodeView = new BTNodeView(new NodeViewData
-            {
-                Title = "node",
-                HasInputPort = true,
-                InputPortCapacity = Port.Capacity.Single,
-                HasOutputPort = true,
-                OutputPortcapacity = Port.Capacity.Single,
-            });
-            btNodeView.BTNode = node;
-            _btNodeViews.Add(btNodeView);
+            _behaviorTree.Nodes.Add(node);
+            AddNodeView(node);
+        }
+
+        public void AddNodeView(BTNode node)
+        {
+            BTNodeView btNodeView = new BTNodeView(node);
             AddElement(btNodeView);
         }
 

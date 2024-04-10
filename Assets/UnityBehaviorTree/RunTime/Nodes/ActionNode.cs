@@ -2,6 +2,7 @@
 
 namespace UnityBehaviorTree.Core
 {
+    [System.Serializable]
     public abstract class ActionNode : BTNode
     {
         protected override void SetNodeViewData()

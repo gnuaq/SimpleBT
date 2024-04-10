@@ -1,4 +1,7 @@
-﻿using UnityEditor;
+﻿using UnityBehaviorTree.Core;
+using UnityEditor;
+using UnityEditor.Callbacks;
+using UnityEditor.Graphs;
 
 namespace UnityBehaviorTree.Editor
 {
@@ -9,12 +12,23 @@ namespace UnityBehaviorTree.Editor
         {
             
         }
-
-        [MenuItem("BehaviorTree/OpenBehaviorTreeWindow")]
-        public static void OpenBTWindow()
+        
+        [OnOpenAsset]
+        public static bool OpenGraphAsset(int instanceID, int line)
         {
-            BTEditorWindow btEditorWindow = new BTEditorWindow();
-            btEditorWindow.Show();
+            // This gets called whenever ANY asset is double clicked
+            // So we gotta check if the asset is of the proper type
+            UnityEngine.Object asset = EditorUtility.InstanceIDToObject(instanceID);
+            if (!(asset is BehaviorTree)) return false;
+ 
+            bool windowIsOpen = EditorWindow.HasOpenInstances<BTEditorWindow>();
+            if (!windowIsOpen) EditorWindow.CreateWindow<BTEditorWindow>();
+            else EditorWindow.FocusWindowIfItsOpen<BTEditorWindow>();
+            
+            BTEditorWindow window = EditorWindow.GetWindow<BTEditorWindow>();
+            window.LoadBehaviorTree(instanceID);
+            
+            return true;
         }
     }
 }

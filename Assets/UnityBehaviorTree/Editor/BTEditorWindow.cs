@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityBehaviorTree.Core;
 using UnityBehaviorTree.Editor.View;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
@@ -16,8 +17,8 @@ namespace UnityBehaviorTree.Editor
         private VisualElement _editorContainer;
         private BTGraphView _graphView;
         private Toolbar _toolbar;
-
-        [MenuItem("BehaviorTree/Window")]
+        
+        [MenuItem("BehaviorTree/OpenBehaviorTreeWindow")]
         public static void ShowBehaviorTreeWindow()
         {
             BTEditorWindow wnd = GetWindow<BTEditorWindow>();
@@ -44,6 +45,12 @@ namespace UnityBehaviorTree.Editor
             _toolbar = _editorContainer.Q<Toolbar>();
 
             root.Add(_editorContainer);
+        }
+
+        public void LoadBehaviorTree(int instanceID)
+        {
+            string assetPath = AssetDatabase.GetAssetPath(instanceID);
+            _graphView.LoadBehaviorTree(AssetDatabase.LoadAssetAtPath<BehaviorTree>(assetPath));
         }
 
         public void LoadConfigAsset()

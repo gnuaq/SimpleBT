@@ -2,6 +2,7 @@
 
 namespace UnityBehaviorTree.Core.Composite
 {
+    [System.Serializable]
     public class Priority : CompositeNode
     {
         protected int _current = 0;

@@ -3,6 +3,7 @@ using UnityEditor.Experimental.GraphView;
 
 namespace UnityBehaviorTree.Core
 {
+    [System.Serializable]
     public class NodeViewData
     {
         public string Title;
@@ -30,7 +31,7 @@ namespace UnityBehaviorTree.Core
 
         public EStatus Status => _status;
         public bool Started => _started;
-        public NodeViewData NodeViewData;
+        public NodeViewData NodeViewData => _nodeViewData;
 
         public BTNode()
         {
