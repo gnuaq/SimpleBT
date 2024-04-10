@@ -51,7 +51,7 @@ namespace UnityBehaviorTree.Editor.View
         {
             var outputPort = InstantiatePort(Orientation.Vertical, Direction.Output, capacity, typeof(bool));
             outputPort.portName = "";
-            inputContainer.Add(outputPort);
+            outputContainer.Add(outputPort);
         }
     }
 }
