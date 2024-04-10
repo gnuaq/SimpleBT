@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace UnityBehaviorTree.Core
@@ -17,6 +18,17 @@ namespace UnityBehaviorTree.Core
         public CompositeNode(List<BTNode> children) : base()
         {
             _children = children;
+        }
+
+        protected override void SetNodeViewData()
+        {
+            _nodeViewData = new NodeViewData
+            {
+                HasInputPort = true,
+                InputPortCapacity = Port.Capacity.Single,
+                HasOutputPort = true,
+                OutputPortcapacity = Port.Capacity.Multi,
+            };
         }
         
         public override BTNode Clone()

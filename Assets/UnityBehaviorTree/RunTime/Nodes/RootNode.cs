@@ -1,4 +1,6 @@
-﻿namespace UnityBehaviorTree.Core
+﻿using UnityEditor.Experimental.GraphView;
+
+namespace UnityBehaviorTree.Core
 {
     public class RootNode : BTNode
     {
@@ -13,6 +15,17 @@
         public RootNode(BTNode child)
         {
             _child = child;
+        }
+        
+        protected override void SetNodeViewData()
+        {
+            _nodeViewData = new NodeViewData
+            {
+                HasInputPort = false,
+                InputPortCapacity = Port.Capacity.Single,
+                HasOutputPort = true,
+                OutputPortcapacity = Port.Capacity.Single,
+            };
         }
 
         protected override void OnStart()
