@@ -8,10 +8,12 @@ namespace UnityBehaviorTree.Core.Action
     public class Wait : ActionNode
     {
         [SerializeField]
-        private float _duration = 3;
+        private float _duration = 1;
 
         private float _time;
 
+        public Wait() { }
+        
         public Wait(float duration)
         {
             _duration = duration;

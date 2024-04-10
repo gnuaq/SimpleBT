@@ -7,8 +7,10 @@ namespace UnityBehaviorTree.Core.Action
     public class Log : ActionNode
     {
         [SerializeField]
-        private string _msg = "abc";
+        private string _msg = "";
 
+        public Log() { }
+        
         public Log(string Msg)
         {
             _msg = Msg;

@@ -7,6 +7,8 @@
 
         private int _currentCycle = 0;
 
+        public Repeat() { }
+        
         public Repeat(BTNode child, int numCycles) : base(child)
         {
             _numCycles = numCycles;

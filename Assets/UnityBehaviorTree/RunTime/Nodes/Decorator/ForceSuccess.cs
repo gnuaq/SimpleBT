@@ -3,6 +3,7 @@
     [System.Serializable]
     public class ForceSuccess : DecoratorNode
     {
+        public ForceSuccess() { }
         public ForceSuccess(BTNode child) : base(child) { }
 
         protected override void OnStart()

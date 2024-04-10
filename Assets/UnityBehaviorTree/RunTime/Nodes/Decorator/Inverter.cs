@@ -3,6 +3,7 @@
     [System.Serializable]
     public class Inverter : DecoratorNode
     {
+        public Inverter() { }
         public Inverter(BTNode child) : base(child) { }
 
         protected override void OnStart()

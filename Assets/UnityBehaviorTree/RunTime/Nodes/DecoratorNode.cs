@@ -12,6 +12,8 @@ namespace UnityBehaviorTree.Core
             set => _child = value;
             get => _child;
         }
+        
+        public DecoratorNode() { }
 
         public DecoratorNode(BTNode child)
         {
