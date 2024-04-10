@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityBehaviorTree.Core;
 using UnityBehaviorTree.Core.Action;
@@ -14,6 +15,14 @@ namespace UnityBehaviorTree.Editor.View
         public new class UxmlFactory : UxmlFactory<BTGraphView, GraphView.UxmlTraits> { }
 
         private BehaviorTree _behaviorTree;
+        private BTEditorWindow _btEditorWindow;
+        private NodeSearchWindow _nodeSearchWindow;
+
+        public BTEditorWindow BTEditorWindow
+        {
+            set => _btEditorWindow = value;
+            get => _btEditorWindow;
+        }
         
         public BehaviorTree BehaviorTree
         {
@@ -32,10 +41,10 @@ namespace UnityBehaviorTree.Editor.View
             gridBackground.StretchToParentSize();
             Insert(0, gridBackground);
 
-            nodeCreationRequest += context =>
-            {
-                AddNode(new Wait(3));
-            };
+            _nodeSearchWindow = ScriptableObject.CreateInstance<NodeSearchWindow>();
+            _nodeSearchWindow.BTGraphView = this;
+            _nodeSearchWindow.BTEditorWindow = _btEditorWindow;
+            nodeCreationRequest += context => SearchWindow.Open(new SearchWindowContext(context.screenMousePosition), _nodeSearchWindow);
 
             graphViewChanged += OnGraphViewChanged;
         }
@@ -47,6 +56,14 @@ namespace UnityBehaviorTree.Editor.View
                 
             }
             return graphViewChange;
+        }
+
+
+        public void AddNode(Type type)
+        {
+            BTNode node = Activator.CreateInstance(type) as BTNode;
+            _behaviorTree.Nodes.Add(node);
+            AddNodeView(node);
         }
 
         public void AddNode(BTNode node)
