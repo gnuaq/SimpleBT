@@ -62,6 +62,7 @@ namespace UnityBehaviorTree.Editor.View
         public void AddNode(Type type)
         {
             BTNode node = Activator.CreateInstance(type) as BTNode;
+            node.NodeViewData.Title = type.Name;
             _behaviorTree.Nodes.Add(node);
             AddNodeView(node);
         }
