@@ -4,6 +4,7 @@ using UnityBehaviorTree.Core;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace UnityBehaviorTree.Editor.View
 {
@@ -84,10 +85,15 @@ namespace UnityBehaviorTree.Editor.View
         public bool OnSelectEntry(SearchTreeEntry SearchTreeEntry, SearchWindowContext context)
         {
             var type = SearchTreeEntry.userData as Type;
+            
+            var mousePosition = _editorWindow.rootVisualElement.ChangeCoordinatesTo(_editorWindow.rootVisualElement.parent,
+                context.screenMousePosition - _editorWindow.position.position);
+            var graphMousePosition = _graphView.contentViewContainer.WorldToLocal(mousePosition);
+            
             if (type == typeof(RootNode))
-                _graphView.AddRootNote(Vector2.zero);
+                _graphView.AddRootNote(graphMousePosition);
             else
-                _graphView.AddNode(type, Vector2.zero);
+                _graphView.AddNode(type, graphMousePosition);
             return true;
         }
     }

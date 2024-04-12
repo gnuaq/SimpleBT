@@ -43,10 +43,15 @@ namespace UnityBehaviorTree.Editor.View
 
             _nodeSearchWindow = ScriptableObject.CreateInstance<NodeSearchWindow>();
             _nodeSearchWindow.BTGraphView = this;
-            _nodeSearchWindow.BTEditorWindow = _btEditorWindow;
             nodeCreationRequest += context => SearchWindow.Open(new SearchWindowContext(context.screenMousePosition), _nodeSearchWindow);
 
             graphViewChanged += OnGraphViewChanged;
+        }
+
+        public void SetEditorWindow(BTEditorWindow editorWindow)
+        {
+            _btEditorWindow = editorWindow;
+            _nodeSearchWindow.BTEditorWindow = editorWindow;
         }
         
         private GraphViewChange OnGraphViewChanged(GraphViewChange graphViewChange)

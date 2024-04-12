@@ -40,7 +40,7 @@ namespace UnityBehaviorTree.Editor
             _editorContainer.StretchToParentSize();
 
             _graphView = _editorContainer.Q<BTGraphView>();
-            _graphView.BTEditorWindow = this;
+            _graphView.SetEditorWindow(this);
             _graphView.styleSheets.Add(_editorConfig.GraphViewStyleSheet);
             
             _toolbar = _editorContainer.Q<Toolbar>();
