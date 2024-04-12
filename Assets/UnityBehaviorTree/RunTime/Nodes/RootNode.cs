@@ -1,4 +1,5 @@
 ﻿using UnityEditor.Experimental.GraphView;
+using UnityEngine;
 
 namespace UnityBehaviorTree.Core
 {
@@ -20,9 +21,9 @@ namespace UnityBehaviorTree.Core
             _child = child;
         }
         
-        protected override void SetNodeViewData()
+        protected override void InitPort()
         {
-            _nodeViewData = new NodeViewData
+            _portConf = new PortConf
             {
                 HasInputPort = false,
                 InputPortCapacity = Port.Capacity.Single,

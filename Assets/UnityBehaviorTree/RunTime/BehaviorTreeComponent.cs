@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityBehaviorTree.Core.Action;
+using UnityBehaviorTree.Core.Composite;
+using UnityBehaviorTree.Core.Decorator;
+using UnityEditor;
+using UnityEngine;
 
 namespace UnityBehaviorTree.Core
 {
@@ -9,7 +14,7 @@ namespace UnityBehaviorTree.Core
 
         private void Start()
         {
-            
+            _behaviorTree.GenerateTree();
         }
 
         private void Update()

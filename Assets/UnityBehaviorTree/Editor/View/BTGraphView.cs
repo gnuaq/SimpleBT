@@ -53,30 +53,100 @@ namespace UnityBehaviorTree.Editor.View
         {
             if (graphViewChange.elementsToRemove != null)
             {
+                foreach (var graphElement in graphViewChange.elementsToRemove)
+                {
+                    if (graphElement is Node node)
+                    {
+                        var nodeView = node as BTNodeView;
+                        _behaviorTree.RemoveNode(nodeView.BTNode.UID);
+                    }
                 
+                    if (graphElement is Edge edge)
+                    {
+                        if (edge.input != null && edge.output != null)
+                        {
+                            var inputNodeView = edge.input.node as BTNodeView;
+                            var outputNodeView = edge.output.node as BTNodeView;
+                            _behaviorTree.RemoveEdge(inputNodeView.BTNode, outputNodeView.BTNode);
+                        }
+                    }
+                }
             }
+
+            if (graphViewChange.edgesToCreate != null)
+            {
+                var edges = graphViewChange.edgesToCreate;
+                foreach (var edge in edges)
+                {
+                    if (edge.input != null && edge.output != null)
+                    {
+                        var inputNodeView = edge.input.node as BTNodeView;
+                        var outputNodeView = edge.output.node as BTNodeView;
+                        _behaviorTree.AddEdge(inputNodeView.BTNode, outputNodeView.BTNode);
+                    }
+                }
+            }
+
+            if (graphViewChange.movedElements != null)
+            {
+                foreach (var element in graphViewChange.movedElements)
+                { 
+                    if (element is Node node)
+                    {
+                        var nodeView = node as BTNodeView;
+                        var btNode = _behaviorTree.FindNodeByID(nodeView.BTNode.UID);
+                        _behaviorTree.MoveNode(btNode, nodeView.GetPosition().position);
+                    }
+                }
+            }
+
             return graphViewChange;
         }
 
-
-        public void AddNode(Type type)
+        public void LoadGraph()
         {
-            BTNode node = Activator.CreateInstance(type) as BTNode;
-            node.NodeViewData.Title = type.Name;
-            _behaviorTree.Nodes.Add(node);
-            AddNodeView(node);
+            foreach (var node in _behaviorTree.Nodes)
+            {
+                var nodeView = AddNodeView(node, node.NodeViewData.Position);
+            }
+            
+            foreach (var node in _behaviorTree.Nodes)
+            {
+                var parentNodeView = GetNodeByGuid(node.UID) as BTNodeView;
+                foreach (var outputNodeID in node.NodeViewData.OutputNodeIDs)
+                {
+                    var childNodeView = GetNodeByGuid(outputNodeID) as BTNodeView;
+                    var edge = parentNodeView.OutputPort.ConnectTo(childNodeView.InputPort);
+                    AddElement(edge);
+                }
+            }
         }
 
-        public void AddNode(BTNode node)
+        public void AddNode(Type type, Vector2 pos)
         {
-            _behaviorTree.Nodes.Add(node);
-            AddNodeView(node);
+            var node = _behaviorTree.AddNode(type, pos);
+            AddNodeView(node, pos);
+        }
+        
+        public void AddRootNote(Vector2 pos)
+        {
+            var node = _behaviorTree.AddRootNode(pos);
+            AddNodeView(node, pos);
         }
 
-        public void AddNodeView(BTNode node)
+        public BTNodeView AddNodeView(BTNode node)
         {
             BTNodeView btNodeView = new BTNodeView(node);
             AddElement(btNodeView);
+            return btNodeView;
+        }
+        
+        public BTNodeView AddNodeView(BTNode node, Vector2 pos)
+        {
+            BTNodeView btNodeView = new BTNodeView(node);
+            btNodeView.SetPosition(new Rect(pos, Vector2.zero));
+            AddElement(btNodeView);
+            return btNodeView;
         }
 
         public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)

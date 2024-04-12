@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ea21f6b5534da9bb36961d23ffdc0b, type: 3}
+  m_Name: BehaviorTree 1
+  m_EditorClassIdentifier: 
+  _nodes:
+  - rid: 7265160797014982714
+  - rid: 7265160797014982718
+  - rid: 7265160797014982720
+  - rid: 7265160797014982722
+  references:
+    version: 2
+    RefIds:
+    - rid: 7265160797014982714
+      type: {class: RootNode, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
+      data:
+        _nodeViewData:
+          rid: 7265160797014982715
+        UID: acc6ce1532bb39d4d9506298be2f6736
+    - rid: 7265160797014982715
+      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
+      data:
+        Title: RootNode
+        Position: {x: 0, y: 0}
+        InputNodeID: 
+        OutputNodeIDs:
+        - 919aebbc7916f584c87287da53d1f27c
+    - rid: 7265160797014982718
+      type: {class: Sequence, ns: UnityBehaviorTree.Core.Composite, asm: Assembly-CSharp}
+      data:
+        _nodeViewData:
+          rid: 7265160797014982719
+        UID: 919aebbc7916f584c87287da53d1f27c
+    - rid: 7265160797014982719
+      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
+      data:
+        Title: Sequence
+        Position: {x: 0, y: 0}
+        InputNodeID: acc6ce1532bb39d4d9506298be2f6736
+        OutputNodeIDs:
+        - 2cdfdb232bc1c0d408c1d06c12c85255
+    - rid: 7265160797014982720
+      type: {class: Wait, ns: UnityBehaviorTree.Core.Action, asm: Assembly-CSharp}
+      data:
+        _nodeViewData:
+          rid: 7265160797014982721
+        UID: 84b9b6e705d714d4fbf4145567d17984
+        _duration: 1
+    - rid: 7265160797014982721
+      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
+      data:
+        Title: Wait
+        Position: {x: 0, y: 0}
+        InputNodeID: 
+        OutputNodeIDs: []
+    - rid: 7265160797014982722
+      type: {class: Log, ns: UnityBehaviorTree.Core.Action, asm: Assembly-CSharp}
+      data:
+        _nodeViewData:
+          rid: 7265160797014982723
+        UID: 2cdfdb232bc1c0d408c1d06c12c85255
+        _msg: 
+    - rid: 7265160797014982723
+      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
+      data:
+        Title: Log
+        Position: {x: 0, y: 0}
+        InputNodeID: 919aebbc7916f584c87287da53d1f27c
+        OutputNodeIDs: []

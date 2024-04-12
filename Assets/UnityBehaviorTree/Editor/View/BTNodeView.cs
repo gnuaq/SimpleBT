@@ -9,12 +9,17 @@ namespace UnityBehaviorTree.Editor.View
     public class BTNodeView : Node
     {
         private BTNode _btNode;
+        private Port _inputPort;
+        private Port _outpurPort;
         
         public BTNode BTNode
         {
             set { _btNode = value; }
             get { return _btNode; }
         }
+
+        public Port InputPort => _inputPort;
+        public Port OutputPort => _outpurPort;
         
         public BTNodeView(BTNode node)
         {
@@ -30,28 +35,32 @@ namespace UnityBehaviorTree.Editor.View
                 Debug.Log("NodeViewData is Null");
                 return;
             }
-                
+
+            viewDataKey = _btNode.UID;
+            
+            var port = _btNode.PortConf;
             var nodeViewData = _btNode.NodeViewData;
+
             if (!string.IsNullOrEmpty(nodeViewData.Title))
                 title = nodeViewData.Title;
-            if (nodeViewData.HasInputPort)
-                AddInputPort(nodeViewData.InputPortCapacity);
-            if (nodeViewData.HasOutputPort)
-                AddOutputPort(nodeViewData.OutputPortcapacity);
+            if (port.HasInputPort)
+                AddInputPort(port.InputPortCapacity);
+            if (port.HasOutputPort)
+                AddOutputPort(port.OutputPortcapacity);
         }
 
         public void AddInputPort(Port.Capacity capacity)
         {
-            var inputPort = InstantiatePort(Orientation.Vertical, Direction.Input, capacity, typeof(bool));
-            inputPort.portName = "";
-            inputContainer.Add(inputPort);
+            _inputPort = InstantiatePort(Orientation.Vertical, Direction.Input, capacity, typeof(bool));
+            _inputPort.portName = "";
+            inputContainer.Add(_inputPort);
         }
 
         public void AddOutputPort(Port.Capacity capacity)
         {
-            var outputPort = InstantiatePort(Orientation.Vertical, Direction.Output, capacity, typeof(bool));
-            outputPort.portName = "";
-            outputContainer.Add(outputPort);
+            _outpurPort = InstantiatePort(Orientation.Vertical, Direction.Output, capacity, typeof(bool));
+            _outpurPort.portName = "";
+            outputContainer.Add(_outpurPort);
         }
     }
 }

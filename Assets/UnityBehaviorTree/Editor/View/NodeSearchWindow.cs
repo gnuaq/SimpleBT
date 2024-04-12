@@ -69,6 +69,14 @@ namespace UnityBehaviorTree.Editor.View
                     });
                 }
             }
+            
+            {
+                tree.Add(new SearchTreeEntry(new GUIContent("RootNode"))
+                {
+                    level = 1,
+                    userData = typeof(RootNode)
+                });
+            }
 
             return tree;
         }
@@ -76,7 +84,10 @@ namespace UnityBehaviorTree.Editor.View
         public bool OnSelectEntry(SearchTreeEntry SearchTreeEntry, SearchWindowContext context)
         {
             var type = SearchTreeEntry.userData as Type;
-            _graphView.AddNode(type);
+            if (type == typeof(RootNode))
+                _graphView.AddRootNote(Vector2.zero);
+            else
+                _graphView.AddNode(type, Vector2.zero);
             return true;
         }
     }

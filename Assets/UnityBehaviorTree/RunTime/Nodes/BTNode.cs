@@ -1,5 +1,8 @@
-﻿using UnityEditor;
+﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace UnityBehaviorTree.Core
 {
@@ -7,6 +10,14 @@ namespace UnityBehaviorTree.Core
     public class NodeViewData
     {
         public string Title;
+        
+        public Vector2 Position;
+        public string InputNodeID;
+        public List<string> OutputNodeIDs;
+    }
+
+    public struct PortConf
+    {
         public bool HasInputPort;
         public Port.Capacity InputPortCapacity;
         public bool HasOutputPort;
@@ -25,17 +36,27 @@ namespace UnityBehaviorTree.Core
         }
 
         private bool _started;
+        [SerializeReference]
+        private NodeViewData _nodeViewData;
 
         protected EStatus _status;
-        protected NodeViewData _nodeViewData;
+        [SerializeField]
+        protected PortConf _portConf;
 
+        public string UID;
         public EStatus Status => _status;
         public bool Started => _started;
-        public NodeViewData NodeViewData => _nodeViewData;
+        public NodeViewData NodeViewData
+        {
+            get => _nodeViewData;
+            set => _nodeViewData = value;
+        }
+
+        public PortConf PortConf => _portConf;
 
         public BTNode()
         {
-            SetNodeViewData();
+            InitPort();
             _status = EStatus.None;
             _started = false;
         }
@@ -62,7 +83,7 @@ namespace UnityBehaviorTree.Core
             
         }
 
-        protected abstract void SetNodeViewData();
+        protected abstract void InitPort();
         protected abstract void OnStart();
         protected abstract void OnStop();
         protected abstract EStatus OnUpdate();

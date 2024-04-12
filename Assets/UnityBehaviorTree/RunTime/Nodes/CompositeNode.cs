@@ -21,9 +21,9 @@ namespace UnityBehaviorTree.Core
             _children = children;
         }
 
-        protected override void SetNodeViewData()
+        protected override void InitPort()
         {
-            _nodeViewData = new NodeViewData
+            _portConf = new PortConf
             {
                 HasInputPort = true,
                 InputPortCapacity = Port.Capacity.Single,
