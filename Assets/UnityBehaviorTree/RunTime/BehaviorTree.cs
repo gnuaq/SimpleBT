@@ -99,7 +99,19 @@ namespace UnityBehaviorTree.Core
                 }
             }
             
+            foreach (var node in _nodes)
+            {
+                if (node is CompositeNode compositeNode)
+                {
+                    compositeNode.Children.Sort(SortByHorizontalPosition);
+                }
+            }
+
             _rootNode = _rootNode.Clone() as RootNode;
+        }
+
+        private int SortByHorizontalPosition(BTNode left, BTNode right) {
+            return left.NodeViewData.Position.x < right.NodeViewData.Position.x ? -1 : 1;
         }
 
         public void AddChild(BTNode parent, BTNode child)
