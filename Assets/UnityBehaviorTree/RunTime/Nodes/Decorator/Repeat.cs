@@ -1,6 +1,5 @@
 ﻿namespace UnityBehaviorTree.Core.Decorator
 {
-    [System.Serializable]
     public class Repeat : DecoratorNode
     {
         private int _numCycles = 0;

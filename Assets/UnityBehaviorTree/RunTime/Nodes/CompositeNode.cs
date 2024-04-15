@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace UnityBehaviorTree.Core
 {
-    [System.Serializable]
     public abstract class CompositeNode : BTNode
     {
         protected List<BTNode> _children;

@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace UnityBehaviorTree.Core.Action
 {
-    [System.Serializable]
     public class Log : ActionNode
     {
         [SerializeField]

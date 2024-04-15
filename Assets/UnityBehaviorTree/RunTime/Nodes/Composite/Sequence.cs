@@ -3,7 +3,6 @@ using UnityEngine.SubsystemsImplementation;
 
 namespace UnityBehaviorTree.Core.Composite
 {
-    [System.Serializable]
     public class Sequence : CompositeNode
     {
         protected int _current = 0;

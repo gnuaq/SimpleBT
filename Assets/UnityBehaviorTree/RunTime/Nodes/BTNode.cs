@@ -25,7 +25,7 @@ namespace UnityBehaviorTree.Core
     }
     
     [System.Serializable]
-    public abstract class BTNode
+    public abstract class BTNode : ScriptableObject
     {
         public enum EStatus
         {

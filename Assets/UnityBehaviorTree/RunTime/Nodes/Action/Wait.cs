@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace UnityBehaviorTree.Core.Action
 {
-    [System.Serializable]
     public class Wait : ActionNode
     {
         [SerializeField]

@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace UnityBehaviorTree.Core
 {
-    [System.Serializable]
     public abstract class DecoratorNode : BTNode
     {
         private BTNode _child;

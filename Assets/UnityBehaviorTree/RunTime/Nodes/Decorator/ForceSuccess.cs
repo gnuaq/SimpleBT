@@ -1,6 +1,5 @@
 ﻿namespace UnityBehaviorTree.Core.Decorator
 {
-    [System.Serializable]
     public class ForceSuccess : DecoratorNode
     {
         public ForceSuccess() { }

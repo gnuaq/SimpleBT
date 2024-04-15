@@ -1,6 +1,5 @@
 ﻿namespace UnityBehaviorTree.Core.Decorator
 {
-    [System.Serializable]
     public class Inverter : DecoratorNode
     {
         public Inverter() { }
