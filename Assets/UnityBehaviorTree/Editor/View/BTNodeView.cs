@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityBehaviorTree.Core;
 using UnityBehaviorTree.Core.Action;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -26,6 +27,12 @@ namespace UnityBehaviorTree.Editor.View
             _btNode = node;
             
             SetNodeViewData();
+        }
+
+        public override void OnSelected()
+        {
+            Selection.activeObject = _btNode;
+            base.OnSelected();
         }
 
         private void SetNodeViewData()

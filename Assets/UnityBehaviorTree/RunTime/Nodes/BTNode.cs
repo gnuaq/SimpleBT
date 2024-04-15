@@ -10,6 +10,7 @@ namespace UnityBehaviorTree.Core
     public class NodeViewData
     {
         public string Title;
+        public string Comment;
         
         public Vector2 Position;
         public string InputNodeID;
