@@ -46,7 +46,7 @@ namespace UnityBehaviorTree.Core
 
         public BTNode AddNode(Type type, Vector2 pos)
         {
-            BTNode node = Activator.CreateInstance(type) as BTNode;
+            BTNode node = ScriptableObject.CreateInstance(type) as BTNode;
             node.UID = GUID.Generate().ToString();
             node.NodeViewData = new NodeViewData
             {
