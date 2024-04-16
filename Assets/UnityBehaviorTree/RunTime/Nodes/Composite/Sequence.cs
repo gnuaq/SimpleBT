@@ -44,5 +44,11 @@ namespace UnityBehaviorTree.Core.Composite
 
             return EStatus.Success;
         }
+        
+        public override void ResetData()
+        {
+            base.ResetData();
+            _current = 0;
+        }
     }
 }

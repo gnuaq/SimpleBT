@@ -38,7 +38,7 @@ namespace UnityBehaviorTree.Core.Decorator
                     case EStatus.Running:
                         return EStatus.Running;
                     case EStatus.Failed:
-                        return EStatus.Failed;
+                        continue;
                     default:
                         return EStatus.Failed;
                 }

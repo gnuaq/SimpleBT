@@ -38,6 +38,7 @@ namespace UnityBehaviorTree.Core
         
         public override void ResetData()
         {
+            base.ResetData();
             _status = EStatus.None;
             _children = new List<BTNode>();
         }

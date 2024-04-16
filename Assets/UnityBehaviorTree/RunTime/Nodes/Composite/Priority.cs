@@ -43,5 +43,11 @@ namespace UnityBehaviorTree.Core.Composite
 
             return BTNode.EStatus.Failed;
         }
+        
+        public override void ResetData()
+        {
+            base.ResetData();
+            _current = 0;
+        }
     }
 }

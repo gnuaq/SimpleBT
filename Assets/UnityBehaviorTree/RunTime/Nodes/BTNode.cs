@@ -41,6 +41,7 @@ namespace UnityBehaviorTree.Core
         [SerializeReference]
         private NodeViewData _nodeViewData;
 
+        [SerializeField]
         protected EStatus _status;
         [SerializeField]
         protected PortConf _portConf;
@@ -49,6 +50,7 @@ namespace UnityBehaviorTree.Core
         
         public string UID;
         public Context Context;
+        public Blackboard Blackboard;
         public EStatus Status => _status;
         public bool Started => _started;
         public NodeViewData NodeViewData
@@ -91,12 +93,16 @@ namespace UnityBehaviorTree.Core
         {
             
         }
+        
+        public virtual void ResetData()
+        {
+            _started = false;
+        }
 
         protected abstract void InitPort();
         protected abstract void OnStart();
         protected abstract void OnStop();
         protected abstract EStatus OnUpdate();
         public abstract BTNode Clone();
-        public abstract void ResetData();
     }
 }

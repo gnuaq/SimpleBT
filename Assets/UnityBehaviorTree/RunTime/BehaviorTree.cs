@@ -20,6 +20,7 @@ namespace UnityBehaviorTree.Core
         private RootNode _rootNode;
         [SerializeReference]
         private Blackboard _blackboard;
+        private Context _context;
         
         public List<BTNode> Nodes => _nodes;
         public Blackboard Blackboard => _blackboard;
@@ -111,6 +112,7 @@ namespace UnityBehaviorTree.Core
             {
                 CreateBlackboard();
             }
+            AddBlackboardToNode(_blackboard);
             
             foreach (var node in _nodes)
             {
@@ -152,7 +154,13 @@ namespace UnityBehaviorTree.Core
 
         public void AddContext(GameObject gameObject)
         {
-            TreeTraversel(node => { node.Context = Context.CreateContextFromGameObject(gameObject); });
+            _context = Context.CreateContextFromGameObject(gameObject);
+            TreeTraversel(node => { node.Context = _context; });
+        }
+        
+        public void AddBlackboardToNode(Blackboard blackboard)
+        {
+            TreeTraversel(node => { node.Blackboard = blackboard; });
         }
         
         private void TreeTraversel(System.Action<BTNode> action)
