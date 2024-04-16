@@ -17,7 +17,9 @@ namespace UnityBehaviorTree.Editor.View
         private BehaviorTree _behaviorTree;
         private BTEditorWindow _btEditorWindow;
         private NodeSearchWindow _nodeSearchWindow;
-
+        
+        public override bool supportsWindowedBlackboard => true;
+        public BTBlackboard Blackboard;
         public BTEditorWindow BTEditorWindow
         {
             set => _btEditorWindow = value;

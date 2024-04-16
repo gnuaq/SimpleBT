@@ -17,6 +17,7 @@ namespace UnityBehaviorTree.Editor
         private VisualElement _editorContainer;
         private BTGraphView _graphView;
         private Toolbar _toolbar;
+        private BTBlackboard _blackboard;
         
         [MenuItem("BehaviorTree/OpenBehaviorTreeWindow")]
         public static void ShowBehaviorTreeWindow()
@@ -38,11 +39,15 @@ namespace UnityBehaviorTree.Editor
             // Instantiate UXML
             _editorContainer = _editorConfig.GraphViewVirtVisualTreeAsset.Instantiate();
             _editorContainer.StretchToParentSize();
+            
+            _blackboard = new BTBlackboard();
+            _editorContainer.Add(_blackboard);
 
             _graphView = _editorContainer.Q<BTGraphView>();
             _graphView.SetEditorWindow(this);
             _graphView.styleSheets.Add(_editorConfig.GraphViewStyleSheet);
-            
+            _graphView.Blackboard = _blackboard;
+
             _toolbar = _editorContainer.Q<Toolbar>();
 
             root.Add(_editorContainer);
