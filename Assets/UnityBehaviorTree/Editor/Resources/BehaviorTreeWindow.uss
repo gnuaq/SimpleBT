@@ -1,0 +1,63 @@
+.running
+{
+    background-color: #5fc97f;
+}
+
+.node
+{
+    min-width: 150px;
+}
+
+#node-border
+{
+    /*background-color: #3e3e3e;*/
+    /*background-color: #5fc97f;*/
+}
+
+#node-border > #title
+{
+    align-self: center;
+    justify-content: center;
+    min-width: 80%;
+    background-color: #444444;
+    border-radius: 5px;
+}
+
+#TopPortContainer, #BottomPortContainer
+{
+    align-self: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #313131;
+    min-width: 70%;
+    border-radius: 2px;
+}
+
+#TopPortContainer
+{
+    margin-bottom: -1px;
+}
+
+#BottomPortContainer
+{
+    margin-top: -1px;
+}
+
+.port
+{
+    justify-content: center;
+    align-items: center;
+    background-color: #383838;
+    width: 100%;
+    border-radius: 5px;
+}
+
+:select:hover > .port
+{
+    background-color: #575757;
+}
+
+#title-button-container
+{
+    display: none;
+}

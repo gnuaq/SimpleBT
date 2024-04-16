@@ -13,8 +13,6 @@ namespace UnityBehaviorTree.Core
 
         public Blackboard()
         {
-            _targetPos = new Vector3();
-            _targetPlayer = new GameObject();
         }
     }
 }

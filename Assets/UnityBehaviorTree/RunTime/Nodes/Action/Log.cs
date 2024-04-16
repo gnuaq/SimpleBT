@@ -26,8 +26,7 @@ namespace UnityBehaviorTree.Core.Action
         protected override EStatus OnUpdate()
         {
             Debug.Log($"Log: {_msg}");
-            _status = EStatus.Success;
-            return _status;
+            return EStatus.Success;
         }
     }
 }

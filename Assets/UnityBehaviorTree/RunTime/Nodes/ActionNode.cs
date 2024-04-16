@@ -23,7 +23,7 @@ namespace UnityBehaviorTree.Core
         public override void ResetData()
         {
             base.ResetData();
-            _status = EStatus.None;
+            Status = EStatus.None;
         }
     }
 }

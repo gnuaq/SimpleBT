@@ -42,16 +42,26 @@ namespace UnityBehaviorTree.Core
         private NodeViewData _nodeViewData;
 
         [SerializeField]
-        protected EStatus _status;
+        private EStatus _status;
         [SerializeField]
         protected PortConf _portConf;
 
         public System.Action<NodeViewData> OnNodeDataChange;
+        public System.Action<EStatus> OnStatusChange;
         
         public string UID;
         public Context Context;
         public Blackboard Blackboard;
-        public EStatus Status => _status;
+        public EStatus Status
+        {
+            get { return _status; }
+            set
+            {
+                _status = value;
+                OnStatusChange?.Invoke(_status);
+            }
+        }
+
         public bool Started => _started;
         public NodeViewData NodeViewData
         {
@@ -75,7 +85,7 @@ namespace UnityBehaviorTree.Core
                 _started = true;
             }
 
-            _status = OnUpdate();
+            Status = OnUpdate();
 
             if (_status != EStatus.Running)
             {

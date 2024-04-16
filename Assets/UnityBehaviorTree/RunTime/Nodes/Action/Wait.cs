@@ -29,17 +29,18 @@ namespace UnityBehaviorTree.Core.Action
 
         protected override EStatus OnUpdate()
         {
+            EStatus status;
             if (_time < _duration)
             {
                 _time += Time.deltaTime;
-                _status = EStatus.Running;
+                status = EStatus.Running;
             }
             else
             {
-                _status =  EStatus.Success;
+                status =  EStatus.Success;
             }
 
-            return _status;
+            return status;
         }
     }
 }

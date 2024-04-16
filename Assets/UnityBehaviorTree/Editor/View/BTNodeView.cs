@@ -4,6 +4,7 @@ using UnityBehaviorTree.Core.Action;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace UnityBehaviorTree.Editor.View
 {
@@ -12,7 +13,10 @@ namespace UnityBehaviorTree.Editor.View
         private BTNode _btNode;
         private Port _inputPort;
         private Port _outpurPort;
-        
+
+        private VisualElement _topContainer;
+        private VisualElement _bottomContainer;
+
         public BTNode BTNode
         {
             set { _btNode = value; }
@@ -26,8 +30,16 @@ namespace UnityBehaviorTree.Editor.View
         {
             _btNode = node;
             _btNode.OnNodeDataChange += OnNodeDataChange;
+            _btNode.OnStatusChange += HighlightRunning;
+
+            _topContainer = new VisualElement { name = "TopPortContainer" };
+            _bottomContainer = new VisualElement { name = "BottomPortContainer" };
+            mainContainer.Insert(0, _topContainer);
+            mainContainer.Add(_bottomContainer);
             
             SetNodeViewData(_btNode.NodeViewData);
+
+            RefreshExpandedState();
         }
 
         private void OnNodeDataChange(NodeViewData nodeViewData)
@@ -71,14 +83,28 @@ namespace UnityBehaviorTree.Editor.View
         {
             _inputPort = InstantiatePort(Orientation.Vertical, Direction.Input, capacity, typeof(bool));
             _inputPort.portName = "";
-            inputContainer.Add(_inputPort);
+            // _inputPort.RemoveFromClassList("input");
+            _topContainer.Add(_inputPort);
         }
 
         public void AddOutputPort(Port.Capacity capacity)
         {
             _outpurPort = InstantiatePort(Orientation.Vertical, Direction.Output, capacity, typeof(bool));
             _outpurPort.portName = "";
-            outputContainer.Add(_outpurPort);
+            // _inputPort.RemoveFromClassList("output");
+            _bottomContainer.Add(_outpurPort);
+        }
+
+        public void HighlightRunning(BTNode.EStatus status)
+        {
+            if (status == BTNode.EStatus.Running)
+            {
+                mainContainer.AddToClassList("running");
+            }
+            else
+            {
+                mainContainer.RemoveFromClassList("running");
+            }
         }
     }
 }
