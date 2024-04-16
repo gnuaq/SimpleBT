@@ -14,7 +14,7 @@ namespace UnityBehaviorTree.Core
 
         private void Start()
         {
-            _behaviorTree.GenerateTree();
+            _behaviorTree.GenerateTree(gameObject);
         }
 
         private void Update()

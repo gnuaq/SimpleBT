@@ -15,11 +15,14 @@ namespace UnityBehaviorTree.Core
     [CreateAssetMenu(fileName = "BehaviorTree", menuName = "BehaviorTree/BehaviorTree")]
     public class BehaviorTree : ScriptableObject
     {
-        [SerializeReference]
+        [SerializeField]
         private List<BTNode> _nodes;
         private RootNode _rootNode;
-
+        [SerializeReference]
+        private Blackboard _blackboard;
+        
         public List<BTNode> Nodes => _nodes;
+        public Blackboard Blackboard => _blackboard;
 
         public void AddEdge(BTNode inputNode, BTNode outputNode)
         {
@@ -55,6 +58,11 @@ namespace UnityBehaviorTree.Core
                 OutputNodeIDs = new List<string>(),
             };
             _nodes.Add(node);
+            
+            if (!Application.isPlaying) {
+                AssetDatabase.AddObjectToAsset(node, this);
+            }
+            
             EditorUtility.SetDirty(this);
             AssetDatabase.SaveAssets(); 
             return node;
@@ -62,6 +70,7 @@ namespace UnityBehaviorTree.Core
 
         public void RemoveNode(string UID)
         {
+            Debug.Log("remove");
             _nodes.Remove(FindNodeByID(UID));
             EditorUtility.SetDirty(this);
             AssetDatabase.SaveAssets(); 
@@ -78,16 +87,32 @@ namespace UnityBehaviorTree.Core
         {
             node.NodeViewData.Position = pos;
         }
+        
+        public void CreateBlackboard()
+        {
+            _blackboard = new Blackboard();
+            
+            EditorUtility.SetDirty(this);
+            AssetDatabase.SaveAssets(); 
+        }
 
         public BTNode FindNodeByID(string UID)
         {
             return _nodes.FirstOrDefault(node => node.UID == UID);
         }
         
-        public void GenerateTree()
+        public void GenerateTree(GameObject gameObject)
         {
+            AddContext(gameObject);
+            if (_blackboard == null)
+            {
+                CreateBlackboard();
+            }
+            
             foreach (var node in _nodes)
             {
+                node.ResetData();
+                
                 if (node is RootNode rootNode)
                 {
                     _rootNode = rootNode;
@@ -106,8 +131,19 @@ namespace UnityBehaviorTree.Core
                     compositeNode.Children.Sort(SortByHorizontalPosition);
                 }
             }
+        }
 
-            _rootNode = _rootNode.Clone() as RootNode;
+        public void AddContext(GameObject gameObject)
+        {
+            TreeTraversel(node => { node.Context = Context.CreateContextFromGameObject(gameObject); });
+        }
+        
+        private void TreeTraversel(System.Action<BTNode> action)
+        {
+            foreach (var node in _nodes)
+            {
+                action?.Invoke(node);
+            }
         }
 
         private int SortByHorizontalPosition(BTNode left, BTNode right) {

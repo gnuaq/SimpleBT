@@ -35,5 +35,11 @@ namespace UnityBehaviorTree.Core
         {
             return (BTNode)this.MemberwiseClone();
         }
+        
+        public override void ResetData()
+        {
+            _status = EStatus.None;
+            _children = new List<BTNode>();
+        }
     }
 }

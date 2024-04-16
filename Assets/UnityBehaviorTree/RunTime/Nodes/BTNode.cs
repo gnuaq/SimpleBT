@@ -43,8 +43,9 @@ namespace UnityBehaviorTree.Core
         protected EStatus _status;
         [SerializeField]
         protected PortConf _portConf;
-
+        
         public string UID;
+        public Context Context;
         public EStatus Status => _status;
         public bool Started => _started;
         public NodeViewData NodeViewData
@@ -89,5 +90,6 @@ namespace UnityBehaviorTree.Core
         protected abstract void OnStop();
         protected abstract EStatus OnUpdate();
         public abstract BTNode Clone();
+        public abstract void ResetData();
     }
 }
