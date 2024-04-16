@@ -32,17 +32,17 @@ namespace UnityBehaviorTree.Core.Composite
                 switch (_children[i].Status)
                 {
                     case EStatus.Running:
-                        return _status = EStatus.Running;
+                        return EStatus.Running;
                     case EStatus.Success:
                         continue;
                     case EStatus.Failed:
-                        return _status = EStatus.Failed;
+                        return EStatus.Failed;
                     default:
-                        return _status = EStatus.Failed;
+                        return EStatus.Failed;
                 }
             }
 
-            return _status = EStatus.Success;
+            return EStatus.Success;
         }
     }
 }

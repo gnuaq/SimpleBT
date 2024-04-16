@@ -18,10 +18,10 @@
             Child.Tick();
             if (Child.Status == EStatus.Running)
             {
-                return _status = EStatus.Running;
+                return EStatus.Running;
             }
             
-            return _status = EStatus.Success;
+            return EStatus.Success;
         }
     }
 }

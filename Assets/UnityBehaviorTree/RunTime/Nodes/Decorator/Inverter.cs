@@ -19,13 +19,13 @@
             switch (Child.Status)
             {
                 case EStatus.Success:
-                    return _status = EStatus.Failed;
+                    return EStatus.Failed;
                 case EStatus.Failed:
-                    return _status = EStatus.Success;
+                    return EStatus.Success;
                 case EStatus.Running:
-                    return _status = EStatus.Running;
+                    return EStatus.Running;
                 default:
-                    return _status = EStatus.Failed;
+                    return EStatus.Failed;
             }
         }
     }

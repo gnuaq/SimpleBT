@@ -73,7 +73,7 @@ namespace UnityBehaviorTree.Core
                 _started = true;
             }
 
-            OnUpdate();
+            _status = OnUpdate();
 
             if (_status != EStatus.Running)
             {

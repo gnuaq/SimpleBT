@@ -42,7 +42,7 @@ namespace UnityBehaviorTree.Core
         protected override EStatus OnUpdate()
         {
             _child.Tick();
-            return _status = _child.Status;
+            return _child.Status;
         }
         
         public override BTNode Clone()
