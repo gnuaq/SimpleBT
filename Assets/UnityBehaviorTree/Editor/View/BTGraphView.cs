@@ -46,8 +46,6 @@ namespace UnityBehaviorTree.Editor.View
             _nodeSearchWindow = ScriptableObject.CreateInstance<NodeSearchWindow>();
             _nodeSearchWindow.BTGraphView = this;
             nodeCreationRequest += context => SearchWindow.Open(new SearchWindowContext(context.screenMousePosition), _nodeSearchWindow);
-
-            graphViewChanged += OnGraphViewChanged;
         }
 
         public void SetEditorWindow(BTEditorWindow editorWindow)
@@ -110,14 +108,31 @@ namespace UnityBehaviorTree.Editor.View
             return graphViewChange;
         }
 
-        public void LoadGraph()
+        public void SaveGraph()
         {
-            foreach (var node in _behaviorTree.Nodes)
+            foreach (var node in nodes)
+            {
+                if (node is BTNodeView btNodeView)
+                {
+                    AddNode(btNodeView.BTNode.GetType(), new Vector2());
+                }
+            }
+        }
+
+        public void LoadGraph(BehaviorTree behaviorTree)
+        {
+            graphViewChanged -= OnGraphViewChanged;
+            DeleteElements(graphElements.ToList());
+            graphViewChanged += OnGraphViewChanged;
+            
+            _behaviorTree = behaviorTree;
+            
+            foreach (var node in behaviorTree.Nodes)
             {
                 var nodeView = AddNodeView(node, node.NodeViewData.Position);
             }
             
-            foreach (var node in _behaviorTree.Nodes)
+            foreach (var node in behaviorTree.Nodes)
             {
                 var parentNodeView = GetNodeByGuid(node.UID) as BTNodeView;
                 foreach (var outputNodeID in node.NodeViewData.OutputNodeIDs)

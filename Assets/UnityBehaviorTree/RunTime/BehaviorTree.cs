@@ -70,15 +70,16 @@ namespace UnityBehaviorTree.Core
 
         public void RemoveNode(string UID)
         {
-            Debug.Log("remove");
-            _nodes.Remove(FindNodeByID(UID));
-            EditorUtility.SetDirty(this);
-            AssetDatabase.SaveAssets(); 
+            RemoveNode(FindNodeByID(UID));
         }
 
         public void RemoveNode(BTNode node)
         {
+            if (!Application.isPlaying) {
+                AssetDatabase.RemoveObjectFromAsset(node);
+            }
             _nodes.Remove(node);
+            
             EditorUtility.SetDirty(this);
             AssetDatabase.SaveAssets(); 
         }
@@ -103,6 +104,8 @@ namespace UnityBehaviorTree.Core
         
         public void GenerateTree(GameObject gameObject)
         {
+            ResetData();
+            
             AddContext(gameObject);
             if (_blackboard == null)
             {
@@ -111,8 +114,6 @@ namespace UnityBehaviorTree.Core
             
             foreach (var node in _nodes)
             {
-                node.ResetData();
-                
                 if (node is RootNode rootNode)
                 {
                     _rootNode = rootNode;
@@ -130,6 +131,22 @@ namespace UnityBehaviorTree.Core
                 {
                     compositeNode.Children.Sort(SortByHorizontalPosition);
                 }
+            }
+        }
+        
+        public void RemoveAllGraph()
+        {
+            foreach (var node in _nodes.ToArray())
+            {
+                RemoveNode(node);
+            }
+        }
+
+        public void ResetData()
+        {
+            foreach (var node in _nodes)
+            {
+                node.ResetData();
             }
         }
 

@@ -25,8 +25,14 @@ namespace UnityBehaviorTree.Editor.View
         public BTNodeView(BTNode node)
         {
             _btNode = node;
+            _btNode.OnNodeDataChange += OnNodeDataChange;
             
-            SetNodeViewData();
+            SetNodeViewData(_btNode.NodeViewData);
+        }
+
+        private void OnNodeDataChange(NodeViewData nodeViewData)
+        {
+            SetTitle(nodeViewData);
         }
 
         public override void OnSelected()
@@ -35,9 +41,9 @@ namespace UnityBehaviorTree.Editor.View
             base.OnSelected();
         }
 
-        private void SetNodeViewData()
+        private void SetNodeViewData(NodeViewData data)
         {
-            if (_btNode.NodeViewData is null)
+            if (data is null)
             {
                 Debug.Log("NodeViewData is Null");
                 return;
@@ -46,14 +52,19 @@ namespace UnityBehaviorTree.Editor.View
             viewDataKey = _btNode.UID;
             
             var port = _btNode.PortConf;
-            var nodeViewData = _btNode.NodeViewData;
 
-            if (!string.IsNullOrEmpty(nodeViewData.Title))
-                title = nodeViewData.Title;
+            SetTitle(data);
+            
             if (port.HasInputPort)
                 AddInputPort(port.InputPortCapacity);
             if (port.HasOutputPort)
                 AddOutputPort(port.OutputPortcapacity);
+        }
+
+        private void SetTitle(NodeViewData data)
+        {
+            if (!string.IsNullOrEmpty(data.Title))
+                title = data.Title;
         }
 
         public void AddInputPort(Port.Capacity capacity)

@@ -49,15 +49,41 @@ namespace UnityBehaviorTree.Editor
             _graphView.Blackboard = _blackboard;
 
             _toolbar = _editorContainer.Q<Toolbar>();
-
+            InitToolBarButton();
+            
             root.Add(_editorContainer);
+        }
+
+        private void InitToolBarButton()
+        {
+            // _toolbar.Add(CreateButton("SaveGraph", "", () => _graphView.SaveGraph()));
+            _toolbar.Add(CreateButton("ResetTree", "", ResetTree));
+            _toolbar.Add(CreateButton("Setting", "", Setting));
+        }
+
+        public static VisualElement CreateButton(string name, string tooltip, Action clickEvent)
+        {
+            var button = new Button(clickEvent);
+            button.text = name;
+            button.tooltip = tooltip;
+            return button;
+        }
+
+        private void ResetTree()
+        {
+            _graphView.BehaviorTree.ResetData();
+        }
+
+        private void Setting()
+        {
+            
         }
 
         public void LoadBehaviorTree(int instanceID)
         {
             string assetPath = AssetDatabase.GetAssetPath(instanceID);
-            _graphView.BehaviorTree = AssetDatabase.LoadAssetAtPath<BehaviorTree>(assetPath);
-            _graphView.LoadGraph();
+            var bt = AssetDatabase.LoadAssetAtPath<BehaviorTree>(assetPath);
+            _graphView.LoadGraph(bt);
         }
 
         public void LoadConfigAsset()

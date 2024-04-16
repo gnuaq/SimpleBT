@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -43,6 +44,8 @@ namespace UnityBehaviorTree.Core
         protected EStatus _status;
         [SerializeField]
         protected PortConf _portConf;
+
+        public System.Action<NodeViewData> OnNodeDataChange;
         
         public string UID;
         public Context Context;
@@ -53,7 +56,6 @@ namespace UnityBehaviorTree.Core
             get => _nodeViewData;
             set => _nodeViewData = value;
         }
-
         public PortConf PortConf => _portConf;
 
         public BTNode()
@@ -78,6 +80,11 @@ namespace UnityBehaviorTree.Core
                 OnStop();
                 _started = false;
             }
+        }
+
+        private void OnValidate()
+        {
+            OnNodeDataChange?.Invoke(_nodeViewData);
         }
 
         protected void Attach(BTNode node)
