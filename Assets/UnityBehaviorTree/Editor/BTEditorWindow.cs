@@ -41,7 +41,7 @@ namespace UnityBehaviorTree.Editor
             _editorContainer.StretchToParentSize();
             
             _blackboard = new BTBlackboard();
-            _editorContainer.Add(_blackboard);
+            // _editorContainer.Add(_blackboard);
 
             _graphView = _editorContainer.Q<BTGraphView>();
             _graphView.SetEditorWindow(this);

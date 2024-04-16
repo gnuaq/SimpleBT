@@ -1,7 +1,10 @@
-﻿namespace UnityBehaviorTree.Core.Decorator
+﻿using UnityEngine;
+
+namespace UnityBehaviorTree.Core.Decorator
 {
     public class Repeat : DecoratorNode
     {
+        [SerializeField]
         private int _numCycles = 0;
 
         private int _currentCycle = 0;

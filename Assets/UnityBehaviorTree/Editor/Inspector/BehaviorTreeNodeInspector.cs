@@ -21,7 +21,7 @@ namespace UnityBehaviorTree.Editor.Inspector
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
-            // DrawDefaultInspector();
+            DrawDefaultInspector();
             DrawNodeInspector();
             DrawNodeDescription();
             
