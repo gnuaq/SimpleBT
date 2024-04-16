@@ -8,11 +8,13 @@ namespace UnityBehaviorTree.Core
     [Serializable]
     public class Blackboard
     {
-        public Vector3 vec3Test;
+        public Vector3 _targetPos;
+        public GameObject _targetPlayer;
 
         public Blackboard()
         {
-            vec3Test = new Vector3(1, 0, 1);
+            _targetPos = new Vector3();
+            _targetPlayer = new GameObject();
         }
     }
 }
