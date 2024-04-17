@@ -143,6 +143,19 @@ namespace UnityBehaviorTree.Core
                 RemoveNode(node);
             }
         }
+        
+        public BehaviorTree CloneTree()
+        {
+            BehaviorTree tree = Instantiate(this);
+            tree._rootNode = _rootNode;
+            tree._nodes = new List<BTNode>();
+            foreach (var node in _nodes)
+            {
+                tree._nodes.Add(node.Clone());
+            }
+
+            return tree;
+        }
 
         public void ResetData()
         {

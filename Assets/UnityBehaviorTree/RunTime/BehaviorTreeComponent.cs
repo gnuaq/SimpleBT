@@ -16,6 +16,7 @@ namespace UnityBehaviorTree.Core
 
         private void Start()
         {
+            _behaviorTree = _behaviorTree.CloneTree();
             _behaviorTree.GenerateTree(gameObject);
         }
 

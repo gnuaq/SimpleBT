@@ -116,10 +116,17 @@ namespace UnityBehaviorTree.Core
             _started = false;
         }
 
+        public virtual BTNode Clone()
+        {
+            var node = Instantiate(this);
+            node._nodeViewData = _nodeViewData;
+            node._portConf = PortConf;
+            return node;
+        }
+
         protected abstract void InitPort();
         protected abstract void OnStart();
         protected abstract void OnStop();
         protected abstract EStatus OnUpdate();
-        public abstract BTNode Clone();
     }
 }

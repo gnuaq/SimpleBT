@@ -10,6 +10,7 @@ public class GuardAI : MonoBehaviour
 
     private void Start()
     {
+        _behaviorTree = _behaviorTree.CloneTree();
         _behaviorTree.GenerateTree(gameObject);
     }
 
