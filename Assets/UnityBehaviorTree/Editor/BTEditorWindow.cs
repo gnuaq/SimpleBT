@@ -28,6 +28,13 @@ namespace UnityBehaviorTree.Editor
             wnd.minSize = new Vector2(450, 200);
             wnd.maxSize = new Vector2(1920, 720);
         }
+        
+        public static void ShowBehaviorTreeWindow(BehaviorTree bt)
+        {
+            var window = GetWindow<BTEditorWindow>("Behavior Tree");
+            window.CreateGUI();
+            window.LoadBehaviorTree(bt);
+        }
 
         public void CreateGUI()
         {
@@ -83,6 +90,11 @@ namespace UnityBehaviorTree.Editor
         {
             string assetPath = AssetDatabase.GetAssetPath(instanceID);
             var bt = AssetDatabase.LoadAssetAtPath<BehaviorTree>(assetPath);
+            _graphView.LoadGraph(bt);
+        }
+        
+        public void LoadBehaviorTree(BehaviorTree bt)
+        {
             _graphView.LoadGraph(bt);
         }
 
