@@ -14,9 +14,6 @@ namespace UnityBehaviorTree.Editor.View
         private Port _inputPort;
         private Port _outpurPort;
 
-        private VisualElement _topContainer;
-        private VisualElement _bottomContainer;
-
         public BTNode BTNode
         {
             set { _btNode = value; }
@@ -32,15 +29,16 @@ namespace UnityBehaviorTree.Editor.View
             _btNode.OnNodeDataChange += OnNodeDataChange;
             _btNode.OnStatusChange += HighlightRunning;
 
-            _topContainer = new VisualElement { name = "TopPortContainer" };
-            _bottomContainer = new VisualElement { name = "BottomPortContainer" };
-            mainContainer.Insert(0, _topContainer);
-            mainContainer.Add(_bottomContainer);
+            // change input, output container position
+            inputContainer.RemoveFromHierarchy();
+            outputContainer.RemoveFromHierarchy();
+            mainContainer.Insert(0, inputContainer);
+            mainContainer.Add(outputContainer);
+            inputContainer.AddToClassList("BottomPortContainer");
+            outputContainer.AddToClassList("BottomPortContainer");
             
             SetNodeViewData(_btNode.NodeViewData);
             HighlightRunning(_btNode.Status);
-
-            RefreshExpandedState();
         }
 
         private void OnNodeDataChange(NodeViewData nodeViewData)
@@ -85,7 +83,7 @@ namespace UnityBehaviorTree.Editor.View
             _inputPort = InstantiatePort(Orientation.Vertical, Direction.Input, ConvertPort(capacity), typeof(bool));
             _inputPort.portName = "";
             // _inputPort.RemoveFromClassList("input");
-            _topContainer.Add(_inputPort);
+            inputContainer.Add(_inputPort);
         }
 
         public void AddOutputPort(PortCapacity capacity)
@@ -93,7 +91,7 @@ namespace UnityBehaviorTree.Editor.View
             _outpurPort = InstantiatePort(Orientation.Vertical, Direction.Output, ConvertPort(capacity), typeof(bool));
             _outpurPort.portName = "";
             // _inputPort.RemoveFromClassList("output");
-            _bottomContainer.Add(_outpurPort);
+            outputContainer.Add(_outpurPort);
         }
 
         public Port.Capacity ConvertPort(PortCapacity dataPortCapacity)

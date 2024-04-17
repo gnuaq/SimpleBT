@@ -23,7 +23,7 @@
     border-radius: 5px;
 }
 
-#TopPortContainer, #BottomPortContainer
+.TopPortContainer, .BottomPortContainer
 {
     align-self: center;
     justify-content: center;
@@ -33,12 +33,12 @@
     border-radius: 2px;
 }
 
-#TopPortContainer
+.TopPortContainer
 {
     margin-bottom: -1px;
 }
 
-#BottomPortContainer
+.BottomPortContainer
 {
     margin-top: -1px;
 }
