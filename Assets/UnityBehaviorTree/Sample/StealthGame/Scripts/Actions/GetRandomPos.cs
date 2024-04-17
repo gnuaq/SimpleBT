@@ -9,16 +9,20 @@ public class GetRandomPos : ActionNode
     [SerializeField]
     private float _navigateRadius = 5;
 
-    protected override void OnStart()
+    protected override void OnActionStart()
     {
     }
 
-    protected override void OnStop()
+    protected override void OnActionStop()
     {
     }
 
-    protected override EStatus OnUpdate()
+    protected override EStatus OnActionUpdate()
     {
+        if (Blackboard._targetPos != Vector3.zero)
+        {
+            return EStatus.Failed;
+        }
         Vector3 randomDirection = Random.insideUnitSphere * _navigateRadius;
         randomDirection += Context.Agent.transform.position;
         NavMeshHit hit;

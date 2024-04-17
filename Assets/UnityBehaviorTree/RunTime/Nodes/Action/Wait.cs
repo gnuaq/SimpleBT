@@ -18,16 +18,16 @@ namespace UnityBehaviorTree.Core.Action
             _duration = duration;
         }
 
-        protected override void OnStart()
+        protected override void OnActionStart()
         {
             _time = 0;
         }
 
-        protected override void OnStop()
+        protected override void OnActionStop()
         {
         }
 
-        protected override EStatus OnUpdate()
+        protected override EStatus OnActionUpdate()
         {
             EStatus status;
             if (_time < _duration)

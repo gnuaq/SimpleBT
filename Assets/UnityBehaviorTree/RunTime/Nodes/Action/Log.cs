@@ -15,15 +15,15 @@ namespace UnityBehaviorTree.Core.Action
             _msg = Msg;
         }
         
-        protected override void OnStart()
+        protected override void OnActionStart()
         {
         }
 
-        protected override void OnStop()
+        protected override void OnActionStop()
         {
         }
 
-        protected override EStatus OnUpdate()
+        protected override EStatus OnActionUpdate()
         {
             Debug.Log($"Log: {_msg}");
             return EStatus.Success;

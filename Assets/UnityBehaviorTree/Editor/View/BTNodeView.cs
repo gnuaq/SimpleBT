@@ -38,6 +38,7 @@ namespace UnityBehaviorTree.Editor.View
             mainContainer.Add(_bottomContainer);
             
             SetNodeViewData(_btNode.NodeViewData);
+            HighlightRunning(_btNode.Status);
 
             RefreshExpandedState();
         }

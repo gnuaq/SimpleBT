@@ -53,7 +53,6 @@ namespace UnityBehaviorTree.Core
         public override void ResetData()
         {
             base.ResetData();
-            Status = EStatus.None;
             _child = null;
         }
     }

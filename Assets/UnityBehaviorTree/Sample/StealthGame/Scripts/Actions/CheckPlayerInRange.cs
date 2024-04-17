@@ -8,16 +8,16 @@ public class CheckPlayerInRange : ActionNode
     [SerializeField]
     private float _sightRange = 10;
     
-    protected override void OnStart()
+    protected override void OnActionStart()
     {
         // _sight = Context.Agent.GetComponentInChildren<SphereCollider>();
     }
 
-    protected override void OnStop()
+    protected override void OnActionStop()
     {
     }
 
-    protected override EStatus OnUpdate()
+    protected override EStatus OnActionUpdate()
     {
         Collider[] hitColliders = Physics.OverlapSphere(Context.Agent.transform.position, _sightRange);
 

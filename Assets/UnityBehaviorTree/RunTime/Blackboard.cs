@@ -14,5 +14,11 @@ namespace UnityBehaviorTree.Core
         public Blackboard()
         {
         }
+
+        public void ResetData()
+        {
+            _targetPos = Vector3.zero;
+            _targetPlayer = null;
+        }
     }
 }

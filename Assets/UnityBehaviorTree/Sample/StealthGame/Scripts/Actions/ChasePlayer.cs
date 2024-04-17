@@ -8,16 +8,17 @@ public class ChasePlayer : ActionNode
     [SerializeField]
     private float _chaseRange = 10;
 
-    protected override void OnStart()
+    protected override void OnActionStart()
     {
         _navMeshAgent = Context.Agent.GetComponent<NavMeshAgent>();
+        _navMeshAgent.isStopped = false;
     }
 
-    protected override void OnStop()
+    protected override void OnActionStop()
     {
     }
 
-    protected override EStatus OnUpdate()
+    protected override EStatus OnActionUpdate()
     {
         Collider[] hitColliders = Physics.OverlapSphere(Context.Agent.transform.position, _chaseRange);
 
@@ -35,7 +36,8 @@ public class ChasePlayer : ActionNode
         {
             // continues run the tree
             _navMeshAgent.isStopped = true;
-            return EStatus.Failed;
+            Blackboard._targetPos = Vector3.zero;
+            return EStatus.Success;
             
         }
         
@@ -45,12 +47,14 @@ public class ChasePlayer : ActionNode
         {
             // continues run the tree
             _navMeshAgent.isStopped = true;
-            return EStatus.Failed;
+            Blackboard._targetPos = Vector3.zero;
+            return EStatus.Success;
         }
         
         if (_navMeshAgent.pathStatus == NavMeshPathStatus.PathInvalid)
         {
-            return EStatus.Success;
+            Blackboard._targetPos = Vector3.zero;
+            return EStatus.Failed;
         }
         
         return EStatus.Running;

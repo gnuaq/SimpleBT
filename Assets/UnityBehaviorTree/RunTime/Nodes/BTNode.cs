@@ -106,6 +106,13 @@ namespace UnityBehaviorTree.Core
         
         public virtual void ResetData()
         {
+            Status = EStatus.None;
+            _started = false;
+        }
+        
+        public virtual void ResetRunningData()
+        {
+            Status = EStatus.None;
             _started = false;
         }
 

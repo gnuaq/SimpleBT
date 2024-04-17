@@ -17,8 +17,9 @@ MonoBehaviour:
   _status: 1
   UID: a2d075f33626c774e91d2b91404c765f
   Blackboard:
-    _targetPos: {x: 7.314402, y: 0.08333331, z: 1.405688}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
     _targetPlayer: {fileID: 0}
+  _intevalTime: 0.25
   references:
     version: 2
     RefIds:
@@ -27,7 +28,7 @@ MonoBehaviour:
       data:
         Title: MoveToPos
         Comment: 
-        Position: {x: 935, y: 609}
+        Position: {x: 926, y: 658}
         InputNodeID: e027079a082a9e042b35754add8be7c4
         OutputNodeIDs: []
 --- !u!114 &-7895010805555265482
@@ -44,11 +45,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nodeViewData:
     rid: 7265160897015840781
-  _status: 0
+  _status: 2
   UID: 9767a632c42b33d42b41db537ce217a6
   Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
     _targetPlayer: {fileID: 0}
+  _intevalTime: 0.25
   _chaseRange: 10
   references:
     version: 2
@@ -58,8 +60,8 @@ MonoBehaviour:
       data:
         Title: ChasePlayer
         Comment: 
-        Position: {x: 436, y: 655}
-        InputNodeID: 0e399377c10e75f4ea0c84439cad6cf0
+        Position: {x: 352, y: 815}
+        InputNodeID: 959d9ca5071458142afba7cb18c5c78f
         OutputNodeIDs: []
 --- !u!114 &-6093686280836370273
 MonoBehaviour:
@@ -78,7 +80,7 @@ MonoBehaviour:
   _status: 1
   UID: f18cacbb16f89764bbe597b8c8117e2a
   Blackboard:
-    _targetPos: {x: 7.314402, y: 0.08333331, z: 1.405688}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
     _targetPlayer: {fileID: 0}
   references:
     version: 2
@@ -88,7 +90,7 @@ MonoBehaviour:
       data:
         Title: RootNode
         Comment: 
-        Position: {x: 619, y: 4}
+        Position: {x: 615, y: -30}
         InputNodeID: 
         OutputNodeIDs:
         - 163ab1c3add448648bffc1d771d24d2c
@@ -109,7 +111,7 @@ MonoBehaviour:
   _status: 2
   UID: 0e399377c10e75f4ea0c84439cad6cf0
   Blackboard:
-    _targetPos: {x: 7.314402, y: 0.08333331, z: 1.405688}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
     _targetPlayer: {fileID: 0}
   references:
     version: 2
@@ -119,12 +121,12 @@ MonoBehaviour:
       data:
         Title: chase
         Comment: 
-        Position: {x: 383, y: 485}
+        Position: {x: 339, y: 485}
         InputNodeID: 977aaeb8d1f00a547b38a0e907b874cb
         OutputNodeIDs:
         - 969457554f6889b4d8a5fd351a48791d
         - 05b61cf339386604995e7d5a8c58f9a8
-        - 9767a632c42b33d42b41db537ce217a6
+        - 959d9ca5071458142afba7cb18c5c78f
 --- !u!114 &-811297493820719362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +144,7 @@ MonoBehaviour:
   _status: 1
   UID: e027079a082a9e042b35754add8be7c4
   Blackboard:
-    _targetPos: {x: 7.314402, y: 0.08333331, z: 1.405688}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
     _targetPlayer: {fileID: 0}
   references:
     version: 2
@@ -152,7 +154,7 @@ MonoBehaviour:
       data:
         Title: patrol
         Comment: 
-        Position: {x: 826, y: 485}
+        Position: {x: 851, y: 476}
         InputNodeID: 977aaeb8d1f00a547b38a0e907b874cb
         OutputNodeIDs:
         - 1857889deef49494aaffd2ed680d55e7
@@ -175,8 +177,9 @@ MonoBehaviour:
   _status: 2
   UID: 969457554f6889b4d8a5fd351a48791d
   Blackboard:
-    _targetPos: {x: 7.314402, y: 0.08333331, z: 1.405688}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
     _targetPlayer: {fileID: 0}
+  _intevalTime: 0.25
   _sightRange: 10
   references:
     version: 2
@@ -186,7 +189,7 @@ MonoBehaviour:
       data:
         Title: CheckPlayerInRange
         Comment: 
-        Position: {x: 176, y: 629}
+        Position: {x: 171, y: 670}
         InputNodeID: 0e399377c10e75f4ea0c84439cad6cf0
         OutputNodeIDs: []
 --- !u!114 &11400000
@@ -211,9 +214,9 @@ MonoBehaviour:
   - {fileID: 5141290041614131996}
   - {fileID: 3603943090133776221}
   - {fileID: -8823936067915108384}
-  - {fileID: 8546991844926024788}
   - {fileID: 750039802352422940}
   - {fileID: -7895010805555265482}
+  - {fileID: 9056093689413573243}
   _blackboard:
     rid: 7265160897015840780
   references:
@@ -222,7 +225,7 @@ MonoBehaviour:
     - rid: 7265160897015840780
       type: {class: Blackboard, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
       data:
-        _targetPos: {x: 7.314402, y: 0.08333331, z: 1.405688}
+        _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
         _targetPlayer: {fileID: 0}
 --- !u!114 &236210161003938807
 MonoBehaviour:
@@ -241,7 +244,7 @@ MonoBehaviour:
   _status: 1
   UID: 977aaeb8d1f00a547b38a0e907b874cb
   Blackboard:
-    _targetPos: {x: 7.314402, y: 0.08333331, z: 1.405688}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
     _targetPlayer: {fileID: 0}
   references:
     version: 2
@@ -251,12 +254,11 @@ MonoBehaviour:
       data:
         Title: Priority
         Comment: 
-        Position: {x: 636, y: 243}
+        Position: {x: 615, y: 247}
         InputNodeID: 163ab1c3add448648bffc1d771d24d2c
         OutputNodeIDs:
         - 0e399377c10e75f4ea0c84439cad6cf0
         - e027079a082a9e042b35754add8be7c4
-        - 252093548f27e954db3fa0b003d07be5
 --- !u!114 &750039802352422940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,8 +276,9 @@ MonoBehaviour:
   _status: 3
   UID: d4bbfc0d8e53ddf4883c66b2b1a5b7dc
   Blackboard:
-    _targetPos: {x: 7.314402, y: 0.08333331, z: 1.405688}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
     _targetPlayer: {fileID: 0}
+  _intevalTime: 0.25
   _msg: patrol
   references:
     version: 2
@@ -285,7 +288,7 @@ MonoBehaviour:
       data:
         Title: Log
         Comment: 
-        Position: {x: 1137, y: 629}
+        Position: {x: 1122, y: 658}
         InputNodeID: e027079a082a9e042b35754add8be7c4
         OutputNodeIDs: []
 --- !u!114 &3603943090133776221
@@ -305,8 +308,9 @@ MonoBehaviour:
   _status: 3
   UID: 1857889deef49494aaffd2ed680d55e7
   Blackboard:
-    _targetPos: {x: 7.314402, y: 0.08333331, z: 1.405688}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
     _targetPlayer: {fileID: 0}
+  _intevalTime: 0.25
   _navigateRadius: 5
   references:
     version: 2
@@ -316,7 +320,7 @@ MonoBehaviour:
       data:
         Title: GetRandomPos
         Comment: 
-        Position: {x: 712, y: 609}
+        Position: {x: 723, y: 670}
         InputNodeID: e027079a082a9e042b35754add8be7c4
         OutputNodeIDs: []
 --- !u!114 &4030314525565773146
@@ -336,7 +340,7 @@ MonoBehaviour:
   _status: 1
   UID: 163ab1c3add448648bffc1d771d24d2c
   Blackboard:
-    _targetPos: {x: 7.314402, y: 0.08333331, z: 1.405688}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
     _targetPlayer: {fileID: 0}
   _numCycles: 100
   references:
@@ -347,7 +351,7 @@ MonoBehaviour:
       data:
         Title: Repeat
         Comment: 
-        Position: {x: 679, y: 135}
+        Position: {x: 615, y: 90}
         InputNodeID: f18cacbb16f89764bbe597b8c8117e2a
         OutputNodeIDs:
         - 977aaeb8d1f00a547b38a0e907b874cb
@@ -365,11 +369,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nodeViewData:
     rid: 7265160897015840775
-  _status: 3
+  _status: 0
   UID: 05b61cf339386604995e7d5a8c58f9a8
   Blackboard:
-    _targetPos: {x: 7.314402, y: 0.08333331, z: 1.405688}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
     _targetPlayer: {fileID: 0}
+  _intevalTime: 0.25
   _msg: chase
   references:
     version: 2
@@ -379,10 +384,10 @@ MonoBehaviour:
       data:
         Title: Log
         Comment: 
-        Position: {x: 568, y: 629}
+        Position: {x: 540, y: 671}
         InputNodeID: 0e399377c10e75f4ea0c84439cad6cf0
         OutputNodeIDs: []
---- !u!114 &8546991844926024788
+--- !u!114 &9056093689413573243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -391,25 +396,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6cbe75c703d469aa6d64ebfcd3ee4b9, type: 3}
+  m_Script: {fileID: 11500000, guid: cf2238d554514368a1384454c0425539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _nodeViewData:
-    rid: 7265160897015840778
-  _status: 3
-  UID: 252093548f27e954db3fa0b003d07be5
+    rid: 7265160918057877504
+  _status: 0
+  UID: 959d9ca5071458142afba7cb18c5c78f
   Blackboard:
-    _targetPos: {x: 7.314402, y: 0.08333331, z: 1.405688}
+    _targetPos: {x: 0, y: 0, z: 0}
     _targetPlayer: {fileID: 0}
-  _duration: 1
   references:
     version: 2
     RefIds:
-    - rid: 7265160897015840778
+    - rid: 7265160918057877504
       type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
       data:
-        Title: Wait
+        Title: Inverter
         Comment: 
-        Position: {x: 1268, y: 498}
-        InputNodeID: 977aaeb8d1f00a547b38a0e907b874cb
-        OutputNodeIDs: []
+        Position: {x: 352, y: 671}
+        InputNodeID: 0e399377c10e75f4ea0c84439cad6cf0
+        OutputNodeIDs:
+        - 9767a632c42b33d42b41db537ce217a6

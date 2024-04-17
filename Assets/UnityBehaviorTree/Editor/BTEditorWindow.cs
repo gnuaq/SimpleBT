@@ -58,7 +58,7 @@ namespace UnityBehaviorTree.Editor
         {
             // _toolbar.Add(CreateButton("SaveGraph", "", () => _graphView.SaveGraph()));
             _toolbar.Add(CreateButton("ResetTree", "", ResetTree));
-            _toolbar.Add(CreateButton("Setting", "", Setting));
+            // _toolbar.Add(CreateButton("Setting", "", Setting));
         }
 
         public static VisualElement CreateButton(string name, string tooltip, Action clickEvent)
@@ -71,7 +71,7 @@ namespace UnityBehaviorTree.Editor
 
         private void ResetTree()
         {
-            _graphView.BehaviorTree.ResetData();
+            _graphView.BehaviorTree.ResetRunningData();
         }
 
         private void Setting()

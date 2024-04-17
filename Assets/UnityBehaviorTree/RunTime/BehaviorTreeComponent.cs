@@ -11,6 +11,8 @@ namespace UnityBehaviorTree.Core
     {
         [SerializeField]
         private BehaviorTree _behaviorTree;
+        
+        public BehaviorTree BehaviorTree => _behaviorTree;
 
         private void Start()
         {
