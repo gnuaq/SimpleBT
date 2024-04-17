@@ -28,29 +28,25 @@ namespace UnityBehaviorTree.Core
         {
             inputNode.NodeViewData.InputNodeID = outputNode.UID;
             outputNode.NodeViewData.OutputNodeIDs.Add(inputNode.UID);
-            EditorUtility.SetDirty(this);
-            AssetDatabase.SaveAssets(); 
         }
         
         public void RemoveEdge(BTNode inputNode, BTNode outputNode)
         {
             inputNode.NodeViewData.InputNodeID = null;
             outputNode.NodeViewData.OutputNodeIDs.Remove(inputNode.UID);
-            EditorUtility.SetDirty(this);
-            AssetDatabase.SaveAssets(); 
         }
 
-        public BTNode AddRootNode(Vector2 pos)
+        public BTNode AddRootNode(string guid, Vector2 pos)
         {
-            var rootNode = AddNode(typeof(RootNode), pos);
+            var rootNode = AddNode(guid, typeof(RootNode), pos);
             _rootNode = rootNode as RootNode;
             return rootNode;
         }
 
-        public BTNode AddNode(Type type, Vector2 pos)
+        public BTNode AddNode(string guid, Type type, Vector2 pos)
         {
             BTNode node = ScriptableObject.CreateInstance(type) as BTNode;
-            node.UID = GUID.Generate().ToString();
+            node.UID = guid;
             node.NodeViewData = new NodeViewData
             {
                 Title = type.Name,
@@ -58,13 +54,6 @@ namespace UnityBehaviorTree.Core
                 OutputNodeIDs = new List<string>(),
             };
             _nodes.Add(node);
-            
-            if (!Application.isPlaying) {
-                AssetDatabase.AddObjectToAsset(node, this);
-            }
-            
-            EditorUtility.SetDirty(this);
-            AssetDatabase.SaveAssets(); 
             return node;
         }
 
@@ -75,13 +64,7 @@ namespace UnityBehaviorTree.Core
 
         public void RemoveNode(BTNode node)
         {
-            if (!Application.isPlaying) {
-                AssetDatabase.RemoveObjectFromAsset(node);
-            }
             _nodes.Remove(node);
-            
-            EditorUtility.SetDirty(this);
-            AssetDatabase.SaveAssets(); 
         }
 
         public void MoveNode(BTNode node, Vector2 pos)
@@ -92,9 +75,6 @@ namespace UnityBehaviorTree.Core
         public void CreateBlackboard()
         {
             _blackboard = new Blackboard();
-            
-            EditorUtility.SetDirty(this);
-            AssetDatabase.SaveAssets(); 
         }
 
         public BTNode FindNodeByID(string UID)

@@ -63,7 +63,17 @@ namespace UnityBehaviorTree.Editor.View
                     if (graphElement is Node node)
                     {
                         var nodeView = node as BTNodeView;
-                        _behaviorTree.RemoveNode(nodeView.BTNode.UID);
+
+                        BTNode n = _behaviorTree.FindNodeByID(nodeView.BTNode.UID);
+                        
+                        if (!Application.isPlaying)
+                        {
+                            AssetDatabase.RemoveObjectFromAsset(n);
+                            EditorUtility.SetDirty(_behaviorTree);
+                        }
+                        _behaviorTree.RemoveNode(n);
+
+                        AssetDatabase.SaveAssets(); 
                     }
                 
                     if (graphElement is Edge edge)
@@ -73,6 +83,8 @@ namespace UnityBehaviorTree.Editor.View
                             var inputNodeView = edge.input.node as BTNodeView;
                             var outputNodeView = edge.output.node as BTNodeView;
                             _behaviorTree.RemoveEdge(inputNodeView.BTNode, outputNodeView.BTNode);
+                            EditorUtility.SetDirty(_behaviorTree);
+                            AssetDatabase.SaveAssets(); 
                         }
                     }
                 }
@@ -88,6 +100,8 @@ namespace UnityBehaviorTree.Editor.View
                         var inputNodeView = edge.input.node as BTNodeView;
                         var outputNodeView = edge.output.node as BTNodeView;
                         _behaviorTree.AddEdge(inputNodeView.BTNode, outputNodeView.BTNode);
+                        EditorUtility.SetDirty(_behaviorTree);
+                        AssetDatabase.SaveAssets(); 
                     }
                 }
             }
@@ -146,13 +160,23 @@ namespace UnityBehaviorTree.Editor.View
 
         public void AddNode(Type type, Vector2 pos)
         {
-            var node = _behaviorTree.AddNode(type, pos);
+            var guid = GUID.Generate().ToString();
+            var node = _behaviorTree.AddNode(guid, type, pos);
+            
+            if (!Application.isPlaying) {
+                AssetDatabase.AddObjectToAsset(node, _behaviorTree);
+                EditorUtility.SetDirty(_behaviorTree);
+            }
+            
+            AssetDatabase.SaveAssets(); 
+            
             AddNodeView(node, pos);
         }
         
         public void AddRootNote(Vector2 pos)
         {
-            var node = _behaviorTree.AddRootNode(pos);
+            var guid = GUID.Generate().ToString();
+            var node = _behaviorTree.AddRootNode(guid, pos);
             AddNodeView(node, pos);
         }
 
