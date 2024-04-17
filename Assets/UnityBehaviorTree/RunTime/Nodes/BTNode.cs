@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -17,13 +16,19 @@ namespace UnityBehaviorTree.Core
         public string InputNodeID;
         public List<string> OutputNodeIDs;
     }
+    
+    public enum PortCapacity
+    {
+        Single,
+        Multi,
+    }
 
     public struct PortConf
     {
         public bool HasInputPort;
-        public Port.Capacity InputPortCapacity;
+        public PortCapacity InputPortCapacity;
         public bool HasOutputPort;
-        public Port.Capacity OutputPortcapacity;
+        public PortCapacity OutputPortcapacity;
     }
     
     [System.Serializable]

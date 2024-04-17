@@ -5,7 +5,6 @@ using UnityBehaviorTree.Core.Action;
 using UnityBehaviorTree.Core.Composite;
 using UnityBehaviorTree.Core.Decorator;
 using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;

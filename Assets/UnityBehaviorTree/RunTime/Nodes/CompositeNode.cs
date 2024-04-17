@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace UnityBehaviorTree.Core
@@ -25,9 +24,9 @@ namespace UnityBehaviorTree.Core
             _portConf = new PortConf
             {
                 HasInputPort = true,
-                InputPortCapacity = Port.Capacity.Single,
+                InputPortCapacity = PortCapacity.Single,
                 HasOutputPort = true,
-                OutputPortcapacity = Port.Capacity.Multi,
+                OutputPortcapacity = PortCapacity.Multi,
             };
         }
         

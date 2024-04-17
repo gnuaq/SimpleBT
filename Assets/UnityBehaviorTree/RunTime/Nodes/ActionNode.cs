@@ -1,5 +1,4 @@
-﻿using UnityEditor.Experimental.GraphView;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace UnityBehaviorTree.Core
 {
@@ -19,9 +18,9 @@ namespace UnityBehaviorTree.Core
             _portConf = new PortConf
             {
                 HasInputPort = true,
-                InputPortCapacity = Port.Capacity.Single,
+                InputPortCapacity = PortCapacity.Single,
                 HasOutputPort = false,
-                OutputPortcapacity = Port.Capacity.Single,
+                OutputPortcapacity = PortCapacity.Single,
             };
         }
         

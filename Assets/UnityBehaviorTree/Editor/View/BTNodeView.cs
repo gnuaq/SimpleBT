@@ -80,20 +80,41 @@ namespace UnityBehaviorTree.Editor.View
                 title = data.Title;
         }
 
-        public void AddInputPort(Port.Capacity capacity)
+        public void AddInputPort(PortCapacity capacity)
         {
-            _inputPort = InstantiatePort(Orientation.Vertical, Direction.Input, capacity, typeof(bool));
+            _inputPort = InstantiatePort(Orientation.Vertical, Direction.Input, ConvertPort(capacity), typeof(bool));
             _inputPort.portName = "";
             // _inputPort.RemoveFromClassList("input");
             _topContainer.Add(_inputPort);
         }
 
-        public void AddOutputPort(Port.Capacity capacity)
+        public void AddOutputPort(PortCapacity capacity)
         {
-            _outpurPort = InstantiatePort(Orientation.Vertical, Direction.Output, capacity, typeof(bool));
+            _outpurPort = InstantiatePort(Orientation.Vertical, Direction.Output, ConvertPort(capacity), typeof(bool));
             _outpurPort.portName = "";
             // _inputPort.RemoveFromClassList("output");
             _bottomContainer.Add(_outpurPort);
+        }
+
+        public Port.Capacity ConvertPort(PortCapacity dataPortCapacity)
+        {
+            Port.Capacity capacity = Port.Capacity.Single;
+            
+            switch (dataPortCapacity)
+            {
+                case PortCapacity.Multi:
+                    capacity = Port.Capacity.Multi;
+                    break;
+                case PortCapacity.Single:
+                    capacity = Port.Capacity.Single;
+                    break;
+                default:
+                    Debug.LogWarning("cannot find capacity type. Use Port.Capacity.Single");
+                    capacity = Port.Capacity.Single;
+                    break;
+            }
+
+            return capacity;
         }
 
         public void HighlightRunning(BTNode.EStatus status)
