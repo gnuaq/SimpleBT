@@ -10,9 +10,9 @@ using Button = UnityEngine.UI.Button;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
-public class StealthGameManager : MonoBehaviour
+public class CollectGoldManager : MonoBehaviour
 {
-    public static StealthGameManager Instance;
+    public static CollectGoldManager Instance;
 
     public List<Gold> Golds;
     public List<Guard> Guards;

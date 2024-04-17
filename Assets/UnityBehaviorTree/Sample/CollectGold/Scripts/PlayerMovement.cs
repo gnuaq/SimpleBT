@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!StealthGameManager.Instance.IsEndGame)
+        if (!CollectGoldManager.Instance.IsEndGame)
         {
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");

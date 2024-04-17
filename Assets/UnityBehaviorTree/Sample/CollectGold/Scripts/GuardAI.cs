@@ -12,7 +12,7 @@ public class GuardAI : BehaviorTreeComponent
 
     private void Update()
     {
-        if (!StealthGameManager.Instance.IsEndGame)
+        if (!CollectGoldManager.Instance.IsEndGame)
         {
             base.Update();
         }

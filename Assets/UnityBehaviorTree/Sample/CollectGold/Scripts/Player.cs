@@ -14,15 +14,15 @@ public class Player : MonoBehaviour
 
     public void CollectGold(Gold gold)
     {
-        StealthGameManager.Instance.Golds.ToList().ForEach(g =>
+        CollectGoldManager.Instance.Golds.ToList().ForEach(g =>
         {
             if (g.Equals(gold))
             {
-                StealthGameManager.Instance.Golds.Remove(g);
+                CollectGoldManager.Instance.Golds.Remove(g);
                 Destroy(gold.gameObject);
             }
         });
-        StealthGameManager.Instance.CollectGold();
+        CollectGoldManager.Instance.CollectGold();
     }
     
     private void OnTriggerEnter(Collider other)
@@ -39,8 +39,8 @@ public class Player : MonoBehaviour
         var goard = other.gameObject.GetComponent<Guard>();
         if (goard != null)
         {
-            StealthGameManager.Instance.IsEndGame = true;
-            StealthGameManager.Instance.ShowEndGameUI();
+            CollectGoldManager.Instance.IsEndGame = true;
+            CollectGoldManager.Instance.ShowEndGameUI();
         }
     }
 }
