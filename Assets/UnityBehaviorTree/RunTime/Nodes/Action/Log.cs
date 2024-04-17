@@ -25,7 +25,7 @@ namespace UnityBehaviorTree.Core.Action
 
         protected override EStatus OnActionUpdate()
         {
-            Debug.Log($"Log: {_msg}");
+            Debug.Log($"{Context.Agent.name}: {_msg}");
             return EStatus.Success;
         }
     }

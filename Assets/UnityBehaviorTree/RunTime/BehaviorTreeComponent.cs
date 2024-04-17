@@ -14,13 +14,13 @@ namespace UnityBehaviorTree.Core
         
         public BehaviorTree BehaviorTree => _behaviorTree;
 
-        private void Start()
+        public void Start()
         {
             _behaviorTree = _behaviorTree.CloneTree();
             _behaviorTree.GenerateTree(gameObject);
         }
 
-        private void Update()
+        public void Update()
         {
             _behaviorTree.Tick();
         }
