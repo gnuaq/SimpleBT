@@ -30,7 +30,6 @@ public class GetRandomPos : ActionNode
         if (NavMesh.SamplePosition(randomDirection, out hit, _navigateRadius, 1))
         {
             finalPosition = hit.position;
-            Debug.Log($"final pos {finalPosition}");
             Blackboard._targetPos = finalPosition;
             return EStatus.Success;
         }

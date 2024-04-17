@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using UnityBehaviorTree.Core;
 using UnityEngine;
 
-public class GuardAI : MonoBehaviour
+public class GuardAI : BehaviorTreeComponent
 {
-    [SerializeField]
-    private BehaviorTree _behaviorTree;
-
     private void Start()
     {
-        _behaviorTree = _behaviorTree.CloneTree();
-        _behaviorTree.GenerateTree(gameObject);
+        base.Start();
     }
 
     private void Update()
     {
-        _behaviorTree.Tick();
+        if (!StealthGameManager.Instance.IsEndGame)
+        {
+            base.Update();
+        }
     }
 }

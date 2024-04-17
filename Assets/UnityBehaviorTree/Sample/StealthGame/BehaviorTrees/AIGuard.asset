@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9209433177815615317
+--- !u!114 &-8823936067915108384
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,28 +9,92 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6cbe75c703d469aa6d64ebfcd3ee4b9, type: 3}
+  m_Script: {fileID: 11500000, guid: d81dfb5200a697248a1062be4fcd388f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _nodeViewData:
-    rid: 7265160892566994987
+    rid: 7265160897015840777
   _status: 0
-  UID: 860a2a093b539414ab29246095bc97ae
+  UID: a2d075f33626c774e91d2b91404c765f
   Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
-  _duration: 1
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
+    _targetPlayer: {fileID: 0}
+  _intevalTime: 0.25
   references:
     version: 2
     RefIds:
-    - rid: 7265160892566994987
+    - rid: 7265160897015840777
       type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
       data:
-        Title: Wait
+        Title: MoveToPos
         Comment: 
-        Position: {x: 1295, y: 522}
-        InputNodeID: cd16f685b0730c54f80c8e198f7fe3d9
+        Position: {x: 926, y: 658}
+        InputNodeID: e027079a082a9e042b35754add8be7c4
         OutputNodeIDs: []
---- !u!114 &-6550096729410411829
+--- !u!114 &-7895010805555265482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813196a80ded4834b8eca606fe2d2323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nodeViewData:
+    rid: 7265160897015840781
+  _status: 0
+  UID: 9767a632c42b33d42b41db537ce217a6
+  Blackboard:
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
+    _targetPlayer: {fileID: 0}
+  _intevalTime: 0.25
+  _chaseRange: 10
+  references:
+    version: 2
+    RefIds:
+    - rid: 7265160897015840781
+      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
+      data:
+        Title: ChasePlayer
+        Comment: 
+        Position: {x: 352, y: 815}
+        InputNodeID: 959d9ca5071458142afba7cb18c5c78f
+        OutputNodeIDs: []
+--- !u!114 &-6093686280836370273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3278eacb3ad24f98bb67ff5c901c5552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nodeViewData:
+    rid: 7265160897015840768
+  _status: 0
+  UID: f18cacbb16f89764bbe597b8c8117e2a
+  Blackboard:
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
+    _targetPlayer: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 7265160897015840768
+      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
+      data:
+        Title: RootNode
+        Comment: 
+        Position: {x: 615, y: -30}
+        InputNodeID: 
+        OutputNodeIDs:
+        - 163ab1c3add448648bffc1d771d24d2c
+--- !u!114 &-4721903514319308531
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,26 +107,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nodeViewData:
-    rid: 7265160892566994985
+    rid: 7265160897015840771
   _status: 0
-  UID: cd16f685b0730c54f80c8e198f7fe3d9
+  UID: 0e399377c10e75f4ea0c84439cad6cf0
   Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
+    _targetPlayer: {fileID: 0}
   references:
     version: 2
     RefIds:
-    - rid: 7265160892566994985
+    - rid: 7265160897015840771
       type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
       data:
-        Title: Patrol
+        Title: chase
         Comment: 
-        Position: {x: 1084, y: 349}
-        InputNodeID: 0c3c413be76edac49b0e93514f16a1c9
+        Position: {x: 339, y: 485}
+        InputNodeID: 977aaeb8d1f00a547b38a0e907b874cb
         OutputNodeIDs:
-        - 860a2a093b539414ab29246095bc97ae
-        - 48dd765b39682ae48aa92dc14ee47213
-        - b1ec81f797394004c97979fc52f4864e
---- !u!114 &-6355497701458684631
+        - 969457554f6889b4d8a5fd351a48791d
+        - 959d9ca5071458142afba7cb18c5c78f
+        - 05b61cf339386604995e7d5a8c58f9a8
+--- !u!114 &-811297493820719362
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,29 +136,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676bef4183d24c2f809722405bd0b137, type: 3}
+  m_Script: {fileID: 11500000, guid: 38da18db8aaa4753aa569081ebb0b17f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _nodeViewData:
-    rid: 7265160892566994986
+    rid: 7265160897015840772
   _status: 0
-  UID: 0c3c413be76edac49b0e93514f16a1c9
+  UID: e027079a082a9e042b35754add8be7c4
   Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
+    _targetPlayer: {fileID: 0}
   references:
     version: 2
     RefIds:
-    - rid: 7265160892566994986
+    - rid: 7265160897015840772
       type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
       data:
-        Title: Priority
+        Title: patrol
         Comment: 
-        Position: {x: 659, y: 196}
-        InputNodeID: 69175f49b21797c43b296dc4b7340b20
+        Position: {x: 851, y: 476}
+        InputNodeID: 977aaeb8d1f00a547b38a0e907b874cb
         OutputNodeIDs:
-        - cd16f685b0730c54f80c8e198f7fe3d9
-        - c0246603a7fc1774393df40d2b5c55d4
---- !u!114 &-4611362364163839710
+        - 1857889deef49494aaffd2ed680d55e7
+        - a2d075f33626c774e91d2b91404c765f
+        - 825e8c867ac96ae4c8d1ee9a51723c46
+--- !u!114 &-614711130704673034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,139 +169,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d81dfb5200a697248a1062be4fcd388f, type: 3}
+  m_Script: {fileID: 11500000, guid: d63c7b5243ea717418a027e7d32a7171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _nodeViewData:
-    rid: 7265160892566995003
+    rid: 7265160897015840773
   _status: 0
-  UID: bc8f08770faa6f64e96b6476650d2cc3
+  UID: 969457554f6889b4d8a5fd351a48791d
   Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
+    _targetPlayer: {fileID: 0}
+  _intevalTime: 0.25
+  _sightRange: 10
   references:
     version: 2
     RefIds:
-    - rid: 7265160892566995003
+    - rid: 7265160897015840773
       type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
       data:
-        Title: MoveToPos
+        Title: CheckPlayerInRange
         Comment: 
-        Position: {x: 518, y: 522}
-        InputNodeID: c0246603a7fc1774393df40d2b5c55d4
-        OutputNodeIDs: []
---- !u!114 &-4171783076279921948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3781ef2a5b4c51bbc6996470e8f571, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _started: 0
-  _nodeViewData:
-    rid: -2
-  _status: 0
-  UID: c0246603a7fc1774393df40d2b5c55d6
-  Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
---- !u!114 &-3589661460020231121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c318b930385f47d093fc1ae21dd08032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _nodeViewData:
-    rid: 7265160892566995001
-  _status: 0
-  UID: 07d9645361e493b4a974af0bc43d641c
-  Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
-  _msg: chase
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160892566995001
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: Log
-        Comment: 
-        Position: {x: 694, y: 522}
-        InputNodeID: c0246603a7fc1774393df40d2b5c55d4
-        OutputNodeIDs: []
---- !u!114 &-3416533726115138355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4259b4cf12474456aff17a262bc6a11f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _nodeViewData:
-    rid: 7265160892566994991
-  _status: 0
-  UID: 69175f49b21797c43b296dc4b7340b20
-  Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
-  _numCycles: 100
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160892566994991
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: Repeat
-        Comment: 
-        Position: {x: 659, y: 34}
-        InputNodeID: 1e211f33d65310341b277891623eb79b
-        OutputNodeIDs:
-        - 0c3c413be76edac49b0e93514f16a1c9
---- !u!114 &-1236615315742822489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d81dfb5200a697248a1062be4fcd388f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _nodeViewData:
-    rid: 7265160892566994993
-  _status: 0
-  UID: b1ec81f797394004c97979fc52f4864e
-  Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160892566994993
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: MoveToPos
-        Comment: 
-        Position: {x: 1084, y: 522}
-        InputNodeID: cd16f685b0730c54f80c8e198f7fe3d9
+        Position: {x: 171, y: 670}
+        InputNodeID: 0e399377c10e75f4ea0c84439cad6cf0
         OutputNodeIDs: []
 --- !u!114 &11400000
 MonoBehaviour:
@@ -249,27 +205,29 @@ MonoBehaviour:
   m_Name: AIGuard
   m_EditorClassIdentifier: 
   _nodes:
-  - {fileID: 3878820167855124849}
-  - {fileID: -6550096729410411829}
-  - {fileID: -6355497701458684631}
-  - {fileID: -9209433177815615317}
-  - {fileID: -3416533726115138355}
-  - {fileID: -1236615315742822489}
-  - {fileID: 5603214498082190695}
-  - {fileID: 7524673183207704147}
-  - {fileID: 145117301822573569}
-  - {fileID: -3589661460020231121}
-  - {fileID: -4611362364163839710}
+  - {fileID: -6093686280836370273}
+  - {fileID: 4030314525565773146}
+  - {fileID: 236210161003938807}
+  - {fileID: -4721903514319308531}
+  - {fileID: -811297493820719362}
+  - {fileID: -614711130704673034}
+  - {fileID: 5141290041614131996}
+  - {fileID: 3603943090133776221}
+  - {fileID: -8823936067915108384}
+  - {fileID: -7895010805555265482}
+  - {fileID: 9056093689413573243}
+  - {fileID: 4986898642363078765}
   _blackboard:
-    rid: 7265160892566994992
+    rid: 7265160897015840780
   references:
     version: 2
     RefIds:
-    - rid: 7265160892566994992
+    - rid: 7265160897015840780
       type: {class: Blackboard, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
       data:
         _targetPos: {x: 0, y: 0, z: 0}
---- !u!114 &145117301822573569
+        _targetPlayer: {fileID: 0}
+--- !u!114 &236210161003938807
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,64 +236,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38da18db8aaa4753aa569081ebb0b17f, type: 3}
+  m_Script: {fileID: 11500000, guid: 676bef4183d24c2f809722405bd0b137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _nodeViewData:
-    rid: 7265160892566995000
+    rid: 7265160897015840770
   _status: 0
-  UID: c0246603a7fc1774393df40d2b5c55d4
+  UID: 977aaeb8d1f00a547b38a0e907b874cb
   Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
+    _targetPlayer: {fileID: 0}
   references:
     version: 2
     RefIds:
-    - rid: 7265160892566995000
+    - rid: 7265160897015840770
       type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
       data:
-        Title: Chase
+        Title: Priority
         Comment: 
-        Position: {x: 563, y: 361}
-        InputNodeID: 0c3c413be76edac49b0e93514f16a1c9
+        Position: {x: 615, y: 247}
+        InputNodeID: 163ab1c3add448648bffc1d771d24d2c
         OutputNodeIDs:
-        - 07d9645361e493b4a974af0bc43d641c
-        - a9c9c06fff860674a8eec07fb3e20a84
-        - e65f7f96c57ed7e46a27c0b14b061c4d
-        - e65f7f96c57ed7e46a27c0b14b061c4d
-        - bc8f08770faa6f64e96b6476650d2cc3
-        - bc8f08770faa6f64e96b6476650d2cc3
-        - e65f7f96c57ed7e46a27c0b14b061c4d
---- !u!114 &3878820167855124849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3278eacb3ad24f98bb67ff5c901c5552, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _nodeViewData:
-    rid: 7265160892566994984
-  _status: 0
-  UID: 1e211f33d65310341b277891623eb79b
-  Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160892566994984
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: RootNode
-        Comment: 
-        Position: {x: 659, y: -107}
-        InputNodeID: 
-        OutputNodeIDs:
-        - 69175f49b21797c43b296dc4b7340b20
---- !u!114 &5603214498082190695
+        - 0e399377c10e75f4ea0c84439cad6cf0
+        - e027079a082a9e042b35754add8be7c4
+--- !u!114 &3603943090133776221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -348,24 +272,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nodeViewData:
-    rid: 7265160892566994994
+    rid: 7265160897015840776
   _status: 0
-  UID: 48dd765b39682ae48aa92dc14ee47213
+  UID: 1857889deef49494aaffd2ed680d55e7
   Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
-  _navigateRadius: 15
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
+    _targetPlayer: {fileID: 0}
+  _intevalTime: 0.25
+  _navigateRadius: 5
   references:
     version: 2
     RefIds:
-    - rid: 7265160892566994994
+    - rid: 7265160897015840776
       type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
       data:
         Title: GetRandomPos
         Comment: 
-        Position: {x: 910, y: 522}
-        InputNodeID: cd16f685b0730c54f80c8e198f7fe3d9
+        Position: {x: 723, y: 670}
+        InputNodeID: e027079a082a9e042b35754add8be7c4
         OutputNodeIDs: []
---- !u!114 &7524673183207704147
+--- !u!114 &4030314525565773146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -374,23 +300,120 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d63c7b5243ea717418a027e7d32a7171, type: 3}
+  m_Script: {fileID: 11500000, guid: 4259b4cf12474456aff17a262bc6a11f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _nodeViewData:
-    rid: 7265160892566994998
+    rid: 7265160897015840769
   _status: 0
-  UID: e65f7f96c57ed7e46a27c0b14b061c4d
+  UID: 163ab1c3add448648bffc1d771d24d2c
   Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
+    _targetPlayer: {fileID: 0}
+  _numCycles: 100
   references:
     version: 2
     RefIds:
-    - rid: 7265160892566994998
+    - rid: 7265160897015840769
       type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
       data:
-        Title: CheckPlayerInRange
+        Title: Repeat
         Comment: 
-        Position: {x: 277, y: 522}
-        InputNodeID: c0246603a7fc1774393df40d2b5c55d4
+        Position: {x: 615, y: 90}
+        InputNodeID: f18cacbb16f89764bbe597b8c8117e2a
+        OutputNodeIDs:
+        - 977aaeb8d1f00a547b38a0e907b874cb
+--- !u!114 &4986898642363078765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6cbe75c703d469aa6d64ebfcd3ee4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nodeViewData:
+    rid: 7265160918057877510
+  _status: 0
+  UID: 825e8c867ac96ae4c8d1ee9a51723c46
+  Blackboard:
+    _targetPos: {x: 0, y: 0, z: 0}
+    _targetPlayer: {fileID: 0}
+  _intevalTime: 0.5
+  references:
+    version: 2
+    RefIds:
+    - rid: 7265160918057877510
+      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
+      data:
+        Title: Wait
+        Comment: 
+        Position: {x: 1141, y: 658}
+        InputNodeID: e027079a082a9e042b35754add8be7c4
         OutputNodeIDs: []
+--- !u!114 &5141290041614131996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c318b930385f47d093fc1ae21dd08032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nodeViewData:
+    rid: 7265160897015840775
+  _status: 0
+  UID: 05b61cf339386604995e7d5a8c58f9a8
+  Blackboard:
+    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
+    _targetPlayer: {fileID: 0}
+  _intevalTime: 0.25
+  _msg: chase
+  references:
+    version: 2
+    RefIds:
+    - rid: 7265160897015840775
+      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
+      data:
+        Title: Log
+        Comment: 
+        Position: {x: 540, y: 671}
+        InputNodeID: 0e399377c10e75f4ea0c84439cad6cf0
+        OutputNodeIDs: []
+--- !u!114 &9056093689413573243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2238d554514368a1384454c0425539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nodeViewData:
+    rid: 7265160918057877504
+  _status: 0
+  UID: 959d9ca5071458142afba7cb18c5c78f
+  Blackboard:
+    _targetPos: {x: 0, y: 0, z: 0}
+    _targetPlayer: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 7265160918057877504
+      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
+      data:
+        Title: Inverter
+        Comment: 
+        Position: {x: 352, y: 671}
+        InputNodeID: 0e399377c10e75f4ea0c84439cad6cf0
+        OutputNodeIDs:
+        - 9767a632c42b33d42b41db537ce217a6
