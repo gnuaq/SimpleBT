@@ -14,6 +14,15 @@
     /*background-color: #5fc97f;*/
 }
 
+.node > #selection-border
+{
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: #737373;
+}
+
 #node-border > #title
 {
     align-self: center;
