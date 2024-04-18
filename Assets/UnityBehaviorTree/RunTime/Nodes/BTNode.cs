@@ -43,11 +43,11 @@ namespace UnityBehaviorTree.Core
         }
 
         private bool _started;
-        [SerializeReference]
-        private NodeViewData _nodeViewData;
-
         [SerializeField]
         private EStatus _status;
+        [SerializeField]
+        private NodeViewData _nodeViewData;
+        
         [SerializeField]
         protected PortConf _portConf;
 

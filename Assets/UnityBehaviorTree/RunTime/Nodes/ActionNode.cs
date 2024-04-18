@@ -76,11 +76,6 @@ namespace UnityBehaviorTree.Core
             OnActionStop();
         }
 
-        public override BTNode Clone()
-        {
-            return (BTNode)this.MemberwiseClone();
-        }
-        
         public override void ResetData()
         {
             base.ResetData();
