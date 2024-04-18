@@ -138,7 +138,7 @@ namespace UnityBehaviorTree.Core
 
         public void ResetData()
         {
-            _blackboard.ResetData();
+            _blackboard?.ResetData();
             foreach (var node in _nodes)
             {
                 node.ResetData();

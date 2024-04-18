@@ -177,6 +177,14 @@ namespace UnityBehaviorTree.Editor.View
         {
             var guid = GUID.Generate().ToString();
             var node = _behaviorTree.AddRootNode(guid, pos);
+            
+            if (!Application.isPlaying) {
+                AssetDatabase.AddObjectToAsset(node, _behaviorTree);
+                EditorUtility.SetDirty(_behaviorTree);
+            }
+            
+            AssetDatabase.SaveAssets(); 
+            
             AddNodeView(node, pos);
         }
 
