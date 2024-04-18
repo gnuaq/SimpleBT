@@ -13,7 +13,9 @@ namespace UnityBehaviorTree.Core
         public string Comment;
         
         public Vector2 Position;
+        [HideInInspector]
         public string InputNodeID;
+        [HideInInspector]
         public List<string> OutputNodeIDs;
     }
     
