@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/UnityBehaviorTree/Sample/StealthGame/Scene/StealthGame.unity
+    path: Assets/UnityBehaviorTree/Sample/CollectGold/Scene/CollectGold.unity
     guid: 5a354853368871c449c9b20e6bafa25d
   m_configObjects: {}
