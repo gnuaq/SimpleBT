@@ -279,7 +279,7 @@ MonoBehaviour:
     _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
     _targetPlayer: {fileID: 0}
   _intevalTime: 0.25
-  _navigateRadius: 5
+  _navigateRadius: 10
   references:
     version: 2
     RefIds:

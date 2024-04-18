@@ -607,6 +607,10 @@ PrefabInstance:
       propertyPath: _behaviorTree
       value: 
       objectReference: {fileID: 11400000, guid: 3b755a20120ebcb49859ce4f9dc39aa8, type: 2}
+    - target: {fileID: 4066939054399180292, guid: 07c9ab21fe222e04b80c9c6a8877075f, type: 3}
+      propertyPath: m_Speed
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8703962563758445847, guid: 07c9ab21fe222e04b80c9c6a8877075f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.8
@@ -1077,6 +1081,10 @@ PrefabInstance:
       propertyPath: _behaviorTree
       value: 
       objectReference: {fileID: 11400000, guid: 3b755a20120ebcb49859ce4f9dc39aa8, type: 2}
+    - target: {fileID: 4066939054399180292, guid: 07c9ab21fe222e04b80c9c6a8877075f, type: 3}
+      propertyPath: m_Speed
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8703962563758445847, guid: 07c9ab21fe222e04b80c9c6a8877075f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.17
@@ -1846,6 +1854,10 @@ PrefabInstance:
       propertyPath: _behaviorTree
       value: 
       objectReference: {fileID: 11400000, guid: 3b755a20120ebcb49859ce4f9dc39aa8, type: 2}
+    - target: {fileID: 4066939054399180292, guid: 07c9ab21fe222e04b80c9c6a8877075f, type: 3}
+      propertyPath: m_Speed
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8703962563758445847, guid: 07c9ab21fe222e04b80c9c6a8877075f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.2
@@ -2105,6 +2117,10 @@ PrefabInstance:
       propertyPath: _behaviorTree
       value: 
       objectReference: {fileID: 11400000, guid: 3b755a20120ebcb49859ce4f9dc39aa8, type: 2}
+    - target: {fileID: 4066939054399180292, guid: 07c9ab21fe222e04b80c9c6a8877075f, type: 3}
+      propertyPath: m_Speed
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8703962563758445847, guid: 07c9ab21fe222e04b80c9c6a8877075f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.91
@@ -2851,6 +2867,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4066939054399180292, guid: 07c9ab21fe222e04b80c9c6a8877075f, type: 3}
+      propertyPath: m_Speed
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8703962563758445847, guid: 07c9ab21fe222e04b80c9c6a8877075f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.26
