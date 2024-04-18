@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81dfb5200a697248a1062be4fcd388f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _status: 0
   _nodeViewData:
     rid: 7265160897015840777
-  _status: 0
   UID: a2d075f33626c774e91d2b91404c765f
+  Context:
+    Agent: {fileID: 0}
   Blackboard:
     _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-    _targetPlayer: {fileID: 0}
   _intevalTime: 0.25
   references:
     version: 2
@@ -43,13 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813196a80ded4834b8eca606fe2d2323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _status: 0
   _nodeViewData:
     rid: 7265160897015840781
-  _status: 0
   UID: 9767a632c42b33d42b41db537ce217a6
+  Context:
+    Agent: {fileID: 0}
   Blackboard:
     _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-    _targetPlayer: {fileID: 0}
   _intevalTime: 0.25
   _chaseRange: 10
   references:
@@ -75,13 +77,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3278eacb3ad24f98bb67ff5c901c5552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _status: 0
   _nodeViewData:
     rid: 7265160897015840768
-  _status: 0
   UID: f18cacbb16f89764bbe597b8c8117e2a
+  Context:
+    Agent: {fileID: 0}
   Blackboard:
     _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-    _targetPlayer: {fileID: 0}
   references:
     version: 2
     RefIds:
@@ -106,13 +109,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38da18db8aaa4753aa569081ebb0b17f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _status: 0
   _nodeViewData:
     rid: 7265160897015840771
-  _status: 0
   UID: 0e399377c10e75f4ea0c84439cad6cf0
+  Context:
+    Agent: {fileID: 0}
   Blackboard:
     _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-    _targetPlayer: {fileID: 0}
   references:
     version: 2
     RefIds:
@@ -139,13 +143,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38da18db8aaa4753aa569081ebb0b17f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _status: 0
   _nodeViewData:
     rid: 7265160897015840772
-  _status: 0
   UID: e027079a082a9e042b35754add8be7c4
+  Context:
+    Agent: {fileID: 0}
   Blackboard:
     _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-    _targetPlayer: {fileID: 0}
   references:
     version: 2
     RefIds:
@@ -154,7 +159,7 @@ MonoBehaviour:
       data:
         Title: patrol
         Comment: 
-        Position: {x: 851, y: 476}
+        Position: {x: 864, y: 485}
         InputNodeID: 977aaeb8d1f00a547b38a0e907b874cb
         OutputNodeIDs:
         - 1857889deef49494aaffd2ed680d55e7
@@ -172,13 +177,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d63c7b5243ea717418a027e7d32a7171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _status: 0
   _nodeViewData:
     rid: 7265160897015840773
-  _status: 0
   UID: 969457554f6889b4d8a5fd351a48791d
+  Context:
+    Agent: {fileID: 0}
   Blackboard:
     _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-    _targetPlayer: {fileID: 0}
   _intevalTime: 0.25
   _sightRange: 10
   references:
@@ -226,7 +232,6 @@ MonoBehaviour:
       type: {class: Blackboard, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
       data:
         _targetPos: {x: 0, y: 0, z: 0}
-        _targetPlayer: {fileID: 0}
 --- !u!114 &236210161003938807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,13 +244,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676bef4183d24c2f809722405bd0b137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _status: 0
   _nodeViewData:
     rid: 7265160897015840770
-  _status: 0
   UID: 977aaeb8d1f00a547b38a0e907b874cb
+  Context:
+    Agent: {fileID: 0}
   Blackboard:
     _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-    _targetPlayer: {fileID: 0}
   references:
     version: 2
     RefIds:
@@ -271,13 +277,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25cc38fbb99a3f74a881d0a56549a54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _status: 0
   _nodeViewData:
     rid: 7265160897015840776
-  _status: 0
   UID: 1857889deef49494aaffd2ed680d55e7
+  Context:
+    Agent: {fileID: 0}
   Blackboard:
     _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-    _targetPlayer: {fileID: 0}
   _intevalTime: 0.25
   _navigateRadius: 10
   references:
@@ -303,13 +310,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4259b4cf12474456aff17a262bc6a11f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _status: 0
   _nodeViewData:
     rid: 7265160897015840769
-  _status: 0
   UID: 163ab1c3add448648bffc1d771d24d2c
+  Context:
+    Agent: {fileID: 0}
   Blackboard:
     _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-    _targetPlayer: {fileID: 0}
   _numCycles: 100
   references:
     version: 2
@@ -335,13 +343,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cbe75c703d469aa6d64ebfcd3ee4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _status: 0
   _nodeViewData:
     rid: 7265160918057877510
-  _status: 0
   UID: 825e8c867ac96ae4c8d1ee9a51723c46
+  Context:
+    Agent: {fileID: 0}
   Blackboard:
     _targetPos: {x: 0, y: 0, z: 0}
-    _targetPlayer: {fileID: 0}
   _intevalTime: 0.5
   references:
     version: 2
@@ -351,7 +360,7 @@ MonoBehaviour:
       data:
         Title: Wait
         Comment: 
-        Position: {x: 1141, y: 658}
+        Position: {x: 1146, y: 658}
         InputNodeID: e027079a082a9e042b35754add8be7c4
         OutputNodeIDs: []
 --- !u!114 &5141290041614131996
@@ -366,13 +375,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c318b930385f47d093fc1ae21dd08032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _status: 0
   _nodeViewData:
     rid: 7265160897015840775
-  _status: 0
   UID: 05b61cf339386604995e7d5a8c58f9a8
+  Context:
+    Agent: {fileID: 0}
   Blackboard:
     _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-    _targetPlayer: {fileID: 0}
   _intevalTime: 0.25
   _msg: chase
   references:
@@ -398,13 +408,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2238d554514368a1384454c0425539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _status: 0
   _nodeViewData:
     rid: 7265160918057877504
-  _status: 0
   UID: 959d9ca5071458142afba7cb18c5c78f
+  Context:
+    Agent: {fileID: 0}
   Blackboard:
     _targetPos: {x: 0, y: 0, z: 0}
-    _targetPlayer: {fileID: 0}
   references:
     version: 2
     RefIds:
