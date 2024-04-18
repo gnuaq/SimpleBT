@@ -7,12 +7,6 @@ namespace UnityBehaviorTree.Editor
 {
     public class BTGraphCallBack
     {
-        [MenuItem("Assets/Create/BehaviorTree/CreateBehaviorTreeGraph")]
-        public static void CreateBTGraph()
-        {
-            
-        }
-        
         [OnOpenAsset]
         public static bool OpenGraphAsset(int instanceID, int line)
         {

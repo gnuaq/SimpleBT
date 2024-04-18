@@ -9,7 +9,6 @@ namespace UnityBehaviorTree.Core
     public class Blackboard
     {
         public Vector3 _targetPos;
-        public GameObject _targetPlayer;
 
         public Blackboard()
         {
@@ -18,7 +17,6 @@ namespace UnityBehaviorTree.Core
         public void ResetData()
         {
             _targetPos = Vector3.zero;
-            _targetPlayer = null;
         }
     }
 }
