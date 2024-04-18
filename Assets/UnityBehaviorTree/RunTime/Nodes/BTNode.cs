@@ -47,7 +47,7 @@ namespace UnityBehaviorTree.Core
         private bool _started;
         [SerializeField]
         private EStatus _status;
-        [SerializeField]
+        [SerializeReference]
         private NodeViewData _nodeViewData;
         
         [SerializeField]
