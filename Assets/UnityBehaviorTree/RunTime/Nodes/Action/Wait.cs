@@ -22,7 +22,6 @@ namespace UnityBehaviorTree.Core.Action
 
         protected override EStatus OnActionUpdate()
         {
-
             return EStatus.Success;
         }
     }

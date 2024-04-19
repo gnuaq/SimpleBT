@@ -17,7 +17,6 @@ namespace UnityBehaviorTree.Core
         [SerializeField]
         private List<BTNode> _nodes;
         private RootNode _rootNode;
-        [SerializeReference]
         private Blackboard _blackboard;
         private Context _context;
         
