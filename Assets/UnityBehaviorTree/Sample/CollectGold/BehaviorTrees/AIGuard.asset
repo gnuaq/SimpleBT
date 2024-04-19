@@ -29,7 +29,7 @@ MonoBehaviour:
       data:
         Title: MoveToPos
         Comment: 
-        Position: {x: 926, y: 658}
+        Position: {x: 952, y: 671}
         InputNodeID: e027079a082a9e042b35754add8be7c4
         OutputNodeIDs: []
 --- !u!114 &-7895010805555265482
@@ -62,8 +62,8 @@ MonoBehaviour:
       data:
         Title: ChasePlayer
         Comment: 
-        Position: {x: 352, y: 815}
-        InputNodeID: 959d9ca5071458142afba7cb18c5c78f
+        Position: {x: 354, y: 670}
+        InputNodeID: 0e399377c10e75f4ea0c84439cad6cf0
         OutputNodeIDs: []
 --- !u!114 &-6093686280836370273
 MonoBehaviour:
@@ -125,12 +125,12 @@ MonoBehaviour:
       data:
         Title: chase
         Comment: 
-        Position: {x: 339, y: 485}
+        Position: {x: 339, y: 484}
         InputNodeID: 977aaeb8d1f00a547b38a0e907b874cb
         OutputNodeIDs:
         - 969457554f6889b4d8a5fd351a48791d
-        - 959d9ca5071458142afba7cb18c5c78f
         - 05b61cf339386604995e7d5a8c58f9a8
+        - 9767a632c42b33d42b41db537ce217a6
 --- !u!114 &-811297493820719362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,12 +159,11 @@ MonoBehaviour:
       data:
         Title: patrol
         Comment: 
-        Position: {x: 864, y: 485}
+        Position: {x: 897, y: 484}
         InputNodeID: 977aaeb8d1f00a547b38a0e907b874cb
         OutputNodeIDs:
         - 1857889deef49494aaffd2ed680d55e7
         - a2d075f33626c774e91d2b91404c765f
-        - 825e8c867ac96ae4c8d1ee9a51723c46
 --- !u!114 &-614711130704673034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +194,7 @@ MonoBehaviour:
       data:
         Title: CheckPlayerInRange
         Comment: 
-        Position: {x: 171, y: 670}
+        Position: {x: 171, y: 669}
         InputNodeID: 0e399377c10e75f4ea0c84439cad6cf0
         OutputNodeIDs: []
 --- !u!114 &11400000
@@ -221,7 +220,6 @@ MonoBehaviour:
   - {fileID: 3603943090133776221}
   - {fileID: -8823936067915108384}
   - {fileID: -7895010805555265482}
-  - {fileID: 9056093689413573243}
   - {fileID: 4986898642363078765}
   _blackboard:
     rid: 7265160897015840780
@@ -265,6 +263,7 @@ MonoBehaviour:
         OutputNodeIDs:
         - 0e399377c10e75f4ea0c84439cad6cf0
         - e027079a082a9e042b35754add8be7c4
+        - 825e8c867ac96ae4c8d1ee9a51723c46
 --- !u!114 &3603943090133776221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +294,7 @@ MonoBehaviour:
       data:
         Title: GetRandomPos
         Comment: 
-        Position: {x: 723, y: 670}
+        Position: {x: 765, y: 670}
         InputNodeID: e027079a082a9e042b35754add8be7c4
         OutputNodeIDs: []
 --- !u!114 &4030314525565773146
@@ -360,8 +359,8 @@ MonoBehaviour:
       data:
         Title: Wait
         Comment: 
-        Position: {x: 1146, y: 658}
-        InputNodeID: e027079a082a9e042b35754add8be7c4
+        Position: {x: 1197, y: 484}
+        InputNodeID: 977aaeb8d1f00a547b38a0e907b874cb
         OutputNodeIDs: []
 --- !u!114 &5141290041614131996
 MonoBehaviour:
@@ -384,7 +383,7 @@ MonoBehaviour:
   Blackboard:
     _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
   _intevalTime: 0.25
-  _msg: chase
+  _msg: attack
   references:
     version: 2
     RefIds:
@@ -393,38 +392,6 @@ MonoBehaviour:
       data:
         Title: Log
         Comment: 
-        Position: {x: 540, y: 671}
+        Position: {x: 540, y: 670}
         InputNodeID: 0e399377c10e75f4ea0c84439cad6cf0
         OutputNodeIDs: []
---- !u!114 &9056093689413573243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf2238d554514368a1384454c0425539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _status: 0
-  _nodeViewData:
-    rid: 7265160918057877504
-  UID: 959d9ca5071458142afba7cb18c5c78f
-  Context:
-    Agent: {fileID: 0}
-  Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160918057877504
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: Inverter
-        Comment: 
-        Position: {x: 352, y: 671}
-        InputNodeID: 0e399377c10e75f4ea0c84439cad6cf0
-        OutputNodeIDs:
-        - 9767a632c42b33d42b41db537ce217a6
