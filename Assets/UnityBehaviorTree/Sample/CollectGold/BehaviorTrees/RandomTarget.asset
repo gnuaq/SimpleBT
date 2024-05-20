@@ -1,128 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9121698038099220730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4259b4cf12474456aff17a262bc6a11f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _status: 0
-  _nodeViewData:
-    rid: 7265160936330625028
-  UID: cb4cd42b4dce70a42ba6b5d1b895860c
-  Context:
-    Agent: {fileID: 0}
-  Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
-  _numCycles: 999
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160936330625028
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: Repeat
-        Comment: 
-        Position: {x: 501, y: 210}
-        InputNodeID: 2614027ffb1354c4fa1f99f6eb1806d1
-        OutputNodeIDs:
-        - 4dd815c824c5e6249994213b15612c9a
---- !u!114 &-5751140045284015244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3278eacb3ad24f98bb67ff5c901c5552, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _status: 0
-  _nodeViewData:
-    rid: 7265160936330625026
-  UID: 2614027ffb1354c4fa1f99f6eb1806d1
-  Context:
-    Agent: {fileID: 0}
-  Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160936330625026
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: RootNode
-        Comment: 
-        Position: {x: 501, y: 84}
-        InputNodeID: 
-        OutputNodeIDs:
-        - cb4cd42b4dce70a42ba6b5d1b895860c
---- !u!114 &-460902209419213238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d81dfb5200a697248a1062be4fcd388f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _status: 0
-  _nodeViewData:
-    rid: 7265160936330625029
-  UID: 441f0e62ec5d0294c881f7d8fd85fef5
-  Context:
-    Agent: {fileID: 0}
-  Blackboard:
-    _targetPos: {x: 0, y: 0, z: 0}
-  _intevalTime: 0.25
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160936330625029
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: MoveToPos
-        Comment: 
-        Position: {x: 675, y: 567}
-        InputNodeID: 4dd815c824c5e6249994213b15612c9a
-        OutputNodeIDs: []
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77ea21f6b5534da9bb36961d23ffdc0b, type: 3}
-  m_Name: RandomTarget
-  m_EditorClassIdentifier: 
-  _nodes:
-  - {fileID: -5751140045284015244}
-  - {fileID: 1424122834109150387}
-  - {fileID: -9121698038099220730}
-  - {fileID: -460902209419213238}
-  - {fileID: 764608761662294858}
-  _blackboard:
-    rid: -2
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
---- !u!114 &764608761662294858
+--- !u!114 &-4980773130798335630
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,26 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _status: 0
   _nodeViewData:
-    rid: 7265160936330625030
-  UID: 14575671fc233e74a85f6cdd081cf8fd
+    Title: GetRandomPos
+    Comment: 
+    Position: {x: 408.8, y: 502.4}
+    InputNodeID: f9b19c446ea81a14b9a48259e84169e7
+    OutputNodeIDs: []
+  UID: a8be5fdf19b75bb4eb1fcb5ddb36ffb4
   Context:
     Agent: {fileID: 0}
   Blackboard:
     _targetPos: {x: 0, y: 0, z: 0}
   _intevalTime: 0.25
   _navigateRadius: 5
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160936330625030
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: GetRandomPos
-        Comment: 
-        Position: {x: 360, y: 567}
-        InputNodeID: 4dd815c824c5e6249994213b15612c9a
-        OutputNodeIDs: []
---- !u!114 &1424122834109150387
+--- !u!114 &-283668174298293408
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,22 +40,109 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _status: 0
   _nodeViewData:
-    rid: 7265160936330625027
-  UID: 4dd815c824c5e6249994213b15612c9a
+    Title: Sequence
+    Comment: 
+    Position: {x: 537.6, y: 351.2}
+    InputNodeID: d471a97f40013ad45b99821de0bf44db
+    OutputNodeIDs:
+    - a8be5fdf19b75bb4eb1fcb5ddb36ffb4
+    - 44a9beff3985e0e4c8afe80890eab384
+  UID: f9b19c446ea81a14b9a48259e84169e7
   Context:
     Agent: {fileID: 0}
   Blackboard:
     _targetPos: {x: 0, y: 0, z: 0}
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160936330625027
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: Sequence
-        Comment: 
-        Position: {x: 510, y: 364}
-        InputNodeID: cb4cd42b4dce70a42ba6b5d1b895860c
-        OutputNodeIDs:
-        - 441f0e62ec5d0294c881f7d8fd85fef5
-        - 14575671fc233e74a85f6cdd081cf8fd
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ea21f6b5534da9bb36961d23ffdc0b, type: 3}
+  m_Name: RandomTarget
+  m_EditorClassIdentifier: 
+  _nodes:
+  - {fileID: 8370893968533258105}
+  - {fileID: -283668174298293408}
+  - {fileID: 6184225602621039477}
+  - {fileID: -4980773130798335630}
+  - {fileID: 47207000645437492}
+--- !u!114 &47207000645437492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81dfb5200a697248a1062be4fcd388f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _status: 0
+  _nodeViewData:
+    Title: MoveToPos
+    Comment: 
+    Position: {x: 647.2, y: 502.4}
+    InputNodeID: f9b19c446ea81a14b9a48259e84169e7
+    OutputNodeIDs: []
+  UID: 44a9beff3985e0e4c8afe80890eab384
+  Context:
+    Agent: {fileID: 0}
+  Blackboard:
+    _targetPos: {x: 0, y: 0, z: 0}
+  _intevalTime: 0.25
+--- !u!114 &6184225602621039477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4259b4cf12474456aff17a262bc6a11f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _status: 0
+  _nodeViewData:
+    Title: Repeat
+    Comment: 
+    Position: {x: 548.8, y: 187.20001}
+    InputNodeID: 36461621bf22ca64ea97147d78313b3a
+    OutputNodeIDs:
+    - f9b19c446ea81a14b9a48259e84169e7
+  UID: d471a97f40013ad45b99821de0bf44db
+  Context:
+    Agent: {fileID: 0}
+  Blackboard:
+    _targetPos: {x: 0, y: 0, z: 0}
+  _numCycles: 999
+--- !u!114 &8370893968533258105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3278eacb3ad24f98bb67ff5c901c5552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _status: 0
+  _nodeViewData:
+    Title: RootNode
+    Comment: 
+    Position: {x: 538.4, y: 72}
+    InputNodeID: 
+    OutputNodeIDs:
+    - d471a97f40013ad45b99821de0bf44db
+  UID: 36461621bf22ca64ea97147d78313b3a
+  Context:
+    Agent: {fileID: 0}
+  Blackboard:
+    _targetPos: {x: 0, y: 0, z: 0}

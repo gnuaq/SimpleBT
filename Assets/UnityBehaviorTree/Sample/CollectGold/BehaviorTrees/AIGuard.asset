@@ -1,71 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8823936067915108384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d81dfb5200a697248a1062be4fcd388f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _status: 0
-  _nodeViewData:
-    rid: 7265160897015840777
-  UID: a2d075f33626c774e91d2b91404c765f
-  Context:
-    Agent: {fileID: 0}
-  Blackboard:
-    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-  _intevalTime: 0.25
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160897015840777
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: MoveToPos
-        Comment: 
-        Position: {x: 952, y: 671}
-        InputNodeID: e027079a082a9e042b35754add8be7c4
-        OutputNodeIDs: []
---- !u!114 &-7895010805555265482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813196a80ded4834b8eca606fe2d2323, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _status: 0
-  _nodeViewData:
-    rid: 7265160897015840781
-  UID: 9767a632c42b33d42b41db537ce217a6
-  Context:
-    Agent: {fileID: 0}
-  Blackboard:
-    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-  _intevalTime: 0.25
-  _chaseRange: 10
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160897015840781
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: ChasePlayer
-        Comment: 
-        Position: {x: 354, y: 670}
-        InputNodeID: 0e399377c10e75f4ea0c84439cad6cf0
-        OutputNodeIDs: []
---- !u!114 &-6093686280836370273
+--- !u!114 &-9085592257929443444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,25 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _status: 0
   _nodeViewData:
-    rid: 7265160897015840768
-  UID: f18cacbb16f89764bbe597b8c8117e2a
+    Title: RootNode
+    Comment: 
+    Position: {x: 359.2, y: 175.20001}
+    InputNodeID: 
+    OutputNodeIDs:
+    - 1d6bf111f2b92ce43af1340f748d1377
+  UID: e54b6623f229dcb48824948532c6c236
   Context:
     Agent: {fileID: 0}
   Blackboard:
-    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160897015840768
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: RootNode
-        Comment: 
-        Position: {x: 615, y: -30}
-        InputNodeID: 
-        OutputNodeIDs:
-        - 163ab1c3add448648bffc1d771d24d2c
---- !u!114 &-4721903514319308531
+    _targetPos: {x: 0, y: 0, z: 0}
+--- !u!114 &-6868119647356601095
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,231 +34,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38da18db8aaa4753aa569081ebb0b17f, type: 3}
+  m_Script: {fileID: 11500000, guid: 813196a80ded4834b8eca606fe2d2323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _status: 0
   _nodeViewData:
-    rid: 7265160897015840771
-  UID: 0e399377c10e75f4ea0c84439cad6cf0
+    Title: ChasePlayer
+    Comment: 
+    Position: {x: 208.8, y: 818.39996}
+    InputNodeID: e4cf2a87bfeaa32408e4d3a1f781f170
+    OutputNodeIDs: []
+  UID: e24f93c53fdf02b489471562dbede73b
   Context:
     Agent: {fileID: 0}
   Blackboard:
-    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160897015840771
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: chase
-        Comment: 
-        Position: {x: 339, y: 484}
-        InputNodeID: 977aaeb8d1f00a547b38a0e907b874cb
-        OutputNodeIDs:
-        - 969457554f6889b4d8a5fd351a48791d
-        - 05b61cf339386604995e7d5a8c58f9a8
-        - 9767a632c42b33d42b41db537ce217a6
---- !u!114 &-811297493820719362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38da18db8aaa4753aa569081ebb0b17f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _status: 0
-  _nodeViewData:
-    rid: 7265160897015840772
-  UID: e027079a082a9e042b35754add8be7c4
-  Context:
-    Agent: {fileID: 0}
-  Blackboard:
-    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160897015840772
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: patrol
-        Comment: 
-        Position: {x: 897, y: 484}
-        InputNodeID: 977aaeb8d1f00a547b38a0e907b874cb
-        OutputNodeIDs:
-        - 1857889deef49494aaffd2ed680d55e7
-        - a2d075f33626c774e91d2b91404c765f
---- !u!114 &-614711130704673034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d63c7b5243ea717418a027e7d32a7171, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _status: 0
-  _nodeViewData:
-    rid: 7265160897015840773
-  UID: 969457554f6889b4d8a5fd351a48791d
-  Context:
-    Agent: {fileID: 0}
-  Blackboard:
-    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
+    _targetPos: {x: 0, y: 0, z: 0}
   _intevalTime: 0.25
-  _sightRange: 10
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160897015840773
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: CheckPlayerInRange
-        Comment: 
-        Position: {x: 171, y: 669}
-        InputNodeID: 0e399377c10e75f4ea0c84439cad6cf0
-        OutputNodeIDs: []
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77ea21f6b5534da9bb36961d23ffdc0b, type: 3}
-  m_Name: AIGuard
-  m_EditorClassIdentifier: 
-  _nodes:
-  - {fileID: -6093686280836370273}
-  - {fileID: 4030314525565773146}
-  - {fileID: 236210161003938807}
-  - {fileID: -4721903514319308531}
-  - {fileID: -811297493820719362}
-  - {fileID: -614711130704673034}
-  - {fileID: 5141290041614131996}
-  - {fileID: 3603943090133776221}
-  - {fileID: -8823936067915108384}
-  - {fileID: -7895010805555265482}
-  - {fileID: 4986898642363078765}
-  _blackboard:
-    rid: 7265160897015840780
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160897015840780
-      type: {class: Blackboard, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        _targetPos: {x: 0, y: 0, z: 0}
---- !u!114 &236210161003938807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676bef4183d24c2f809722405bd0b137, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _status: 0
-  _nodeViewData:
-    rid: 7265160897015840770
-  UID: 977aaeb8d1f00a547b38a0e907b874cb
-  Context:
-    Agent: {fileID: 0}
-  Blackboard:
-    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160897015840770
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: Priority
-        Comment: 
-        Position: {x: 615, y: 247}
-        InputNodeID: 163ab1c3add448648bffc1d771d24d2c
-        OutputNodeIDs:
-        - 0e399377c10e75f4ea0c84439cad6cf0
-        - e027079a082a9e042b35754add8be7c4
-        - 825e8c867ac96ae4c8d1ee9a51723c46
---- !u!114 &3603943090133776221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25cc38fbb99a3f74a881d0a56549a54d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _status: 0
-  _nodeViewData:
-    rid: 7265160897015840776
-  UID: 1857889deef49494aaffd2ed680d55e7
-  Context:
-    Agent: {fileID: 0}
-  Blackboard:
-    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-  _intevalTime: 0.25
-  _navigateRadius: 10
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160897015840776
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: GetRandomPos
-        Comment: 
-        Position: {x: 765, y: 670}
-        InputNodeID: e027079a082a9e042b35754add8be7c4
-        OutputNodeIDs: []
---- !u!114 &4030314525565773146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4259b4cf12474456aff17a262bc6a11f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _status: 0
-  _nodeViewData:
-    rid: 7265160897015840769
-  UID: 163ab1c3add448648bffc1d771d24d2c
-  Context:
-    Agent: {fileID: 0}
-  Blackboard:
-    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
-  _numCycles: 100
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160897015840769
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: Repeat
-        Comment: 
-        Position: {x: 615, y: 90}
-        InputNodeID: f18cacbb16f89764bbe597b8c8117e2a
-        OutputNodeIDs:
-        - 977aaeb8d1f00a547b38a0e907b874cb
---- !u!114 &4986898642363078765
+  _chaseRange: 10
+--- !u!114 &-5533611590013518471
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -344,25 +65,225 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _status: 0
   _nodeViewData:
-    rid: 7265160918057877510
-  UID: 825e8c867ac96ae4c8d1ee9a51723c46
+    Title: Wait
+    Comment: 
+    Position: {x: 1004.8, y: 648}
+    InputNodeID: 257c9dbca96ff1a4c8922055297f1b5d
+    OutputNodeIDs: []
+  UID: 4a4860db9824c3548b3cd0fa1ed2ffbf
   Context:
     Agent: {fileID: 0}
   Blackboard:
     _targetPos: {x: 0, y: 0, z: 0}
-  _intevalTime: 0.5
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160918057877510
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: Wait
-        Comment: 
-        Position: {x: 1197, y: 484}
-        InputNodeID: 977aaeb8d1f00a547b38a0e907b874cb
-        OutputNodeIDs: []
---- !u!114 &5141290041614131996
+  _intevalTime: 1
+--- !u!114 &-5186889928609890542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cc38fbb99a3f74a881d0a56549a54d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _status: 0
+  _nodeViewData:
+    Title: GetRandomPos
+    Comment: 
+    Position: {x: 575.2, y: 818.39996}
+    InputNodeID: a7b54d7acf0a8b045af0d6a2a8a466e1
+    OutputNodeIDs: []
+  UID: 053404ea8919312498b9cb677dd92e1b
+  Context:
+    Agent: {fileID: 0}
+  Blackboard:
+    _targetPos: {x: 0, y: 0, z: 0}
+  _intevalTime: 0.25
+  _navigateRadius: 5
+--- !u!114 &-3615703740204547815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676bef4183d24c2f809722405bd0b137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _status: 0
+  _nodeViewData:
+    Title: Priority
+    Comment: 
+    Position: {x: 359.2, y: 484.00003}
+    InputNodeID: 1d6bf111f2b92ce43af1340f748d1377
+    OutputNodeIDs:
+    - e4cf2a87bfeaa32408e4d3a1f781f170
+    - a7b54d7acf0a8b045af0d6a2a8a466e1
+    - 4a4860db9824c3548b3cd0fa1ed2ffbf
+  UID: 257c9dbca96ff1a4c8922055297f1b5d
+  Context:
+    Agent: {fileID: 0}
+  Blackboard:
+    _targetPos: {x: 0, y: 0, z: 0}
+--- !u!114 &-548820007741232470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38da18db8aaa4753aa569081ebb0b17f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _status: 0
+  _nodeViewData:
+    Title: Chase
+    Comment: 
+    Position: {x: 173.6, y: 648}
+    InputNodeID: 257c9dbca96ff1a4c8922055297f1b5d
+    OutputNodeIDs:
+    - e16507891e05575449a686990214fe9a
+    - a66f31d080de6744c9d7ff73361885c9
+    - e24f93c53fdf02b489471562dbede73b
+  UID: e4cf2a87bfeaa32408e4d3a1f781f170
+  Context:
+    Agent: {fileID: 0}
+  Blackboard:
+    _targetPos: {x: 0, y: 0, z: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ea21f6b5534da9bb36961d23ffdc0b, type: 3}
+  m_Name: AIGuard
+  m_EditorClassIdentifier: 
+  _nodes:
+  - {fileID: -9085592257929443444}
+  - {fileID: 3469240850012584334}
+  - {fileID: -3615703740204547815}
+  - {fileID: -548820007741232470}
+  - {fileID: 1918025199514247271}
+  - {fileID: 6523658594217577201}
+  - {fileID: 9118882219209562853}
+  - {fileID: 8817164948979347880}
+  - {fileID: -6868119647356601095}
+  - {fileID: -5186889928609890542}
+  - {fileID: -5533611590013518471}
+--- !u!114 &1918025199514247271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81dfb5200a697248a1062be4fcd388f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _status: 0
+  _nodeViewData:
+    Title: MoveToPos
+    Comment: 
+    Position: {x: 753.6, y: 818.39996}
+    InputNodeID: a7b54d7acf0a8b045af0d6a2a8a466e1
+    OutputNodeIDs: []
+  UID: f0684af29158a35439870915eadb4d26
+  Context:
+    Agent: {fileID: 0}
+  Blackboard:
+    _targetPos: {x: 0, y: 0, z: 0}
+  _intevalTime: 0.25
+--- !u!114 &3469240850012584334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4259b4cf12474456aff17a262bc6a11f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _status: 0
+  _nodeViewData:
+    Title: Repeat
+    Comment: 
+    Position: {x: 359.2, y: 312}
+    InputNodeID: e54b6623f229dcb48824948532c6c236
+    OutputNodeIDs:
+    - 257c9dbca96ff1a4c8922055297f1b5d
+  UID: 1d6bf111f2b92ce43af1340f748d1377
+  Context:
+    Agent: {fileID: 0}
+  Blackboard:
+    _targetPos: {x: 0, y: 0, z: 0}
+  _numCycles: 999
+--- !u!114 &6523658594217577201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63c7b5243ea717418a027e7d32a7171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _status: 0
+  _nodeViewData:
+    Title: CheckPlayerInRange
+    Comment: 
+    Position: {x: 4.8, y: 818.39996}
+    InputNodeID: e4cf2a87bfeaa32408e4d3a1f781f170
+    OutputNodeIDs: []
+  UID: e16507891e05575449a686990214fe9a
+  Context:
+    Agent: {fileID: 0}
+  Blackboard:
+    _targetPos: {x: 0, y: 0, z: 0}
+  _intevalTime: 0.25
+  _sightRange: 10
+--- !u!114 &8817164948979347880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38da18db8aaa4753aa569081ebb0b17f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _status: 0
+  _nodeViewData:
+    Title: Patrol
+    Comment: 
+    Position: {x: 650.4, y: 648}
+    InputNodeID: 257c9dbca96ff1a4c8922055297f1b5d
+    OutputNodeIDs:
+    - 053404ea8919312498b9cb677dd92e1b
+    - f0684af29158a35439870915eadb4d26
+  UID: a7b54d7acf0a8b045af0d6a2a8a466e1
+  Context:
+    Agent: {fileID: 0}
+  Blackboard:
+    _targetPos: {x: 0, y: 0, z: 0}
+--- !u!114 &9118882219209562853
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -376,22 +297,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _status: 0
   _nodeViewData:
-    rid: 7265160897015840775
-  UID: 05b61cf339386604995e7d5a8c58f9a8
+    Title: Log
+    Comment: 
+    Position: {x: 386.4, y: 818.39996}
+    InputNodeID: e4cf2a87bfeaa32408e4d3a1f781f170
+    OutputNodeIDs: []
+  UID: a66f31d080de6744c9d7ff73361885c9
   Context:
     Agent: {fileID: 0}
   Blackboard:
-    _targetPos: {x: -3.578869, y: 0.08333331, z: 0.708478}
+    _targetPos: {x: 0, y: 0, z: 0}
   _intevalTime: 0.25
   _msg: attack
-  references:
-    version: 2
-    RefIds:
-    - rid: 7265160897015840775
-      type: {class: NodeViewData, ns: UnityBehaviorTree.Core, asm: Assembly-CSharp}
-      data:
-        Title: Log
-        Comment: 
-        Position: {x: 540, y: 670}
-        InputNodeID: 0e399377c10e75f4ea0c84439cad6cf0
-        OutputNodeIDs: []

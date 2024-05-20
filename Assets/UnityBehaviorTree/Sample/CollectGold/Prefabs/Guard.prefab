@@ -157,4 +157,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc2b2997086da94295b05b043dcbaac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _behaviorTree: {fileID: 11400000, guid: 3b755a20120ebcb49859ce4f9dc39aa8, type: 2}
+  _behaviorTree: {fileID: 11400000, guid: bf774b43b5e94a9488e4b958833170e6, type: 2}
