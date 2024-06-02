@@ -36,12 +36,18 @@
     margin-right: 15px;
 }
 
-#title > .unity-label
+#node-border > #title > .unity-label
 {
     align-self: center;
     margin-bottom: 6px;
     margin-left: 6px;
     margin-right: 6px;
+}
+
+#node-border > #title > #title-label
+{
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .PortContainer
