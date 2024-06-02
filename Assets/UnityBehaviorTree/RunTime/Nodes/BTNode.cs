@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -109,6 +110,12 @@ namespace UnityBehaviorTree.Core
         protected void Attach(BTNode node)
         {
             
+        }
+
+        public string GetNodeType()
+        {
+            string[] s = this.GetType().ToString().Split(".");
+            return s.LastOrDefault();
         }
         
         public virtual void ResetData()

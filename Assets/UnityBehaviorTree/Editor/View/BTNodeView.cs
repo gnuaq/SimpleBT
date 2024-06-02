@@ -34,9 +34,9 @@ namespace UnityBehaviorTree.Editor.View
             outputContainer.RemoveFromHierarchy();
             mainContainer.Insert(0, inputContainer);
             mainContainer.Add(outputContainer);
-            inputContainer.AddToClassList("BottomPortContainer");
-            outputContainer.AddToClassList("BottomPortContainer");
-            
+            inputContainer.AddToClassList("PortContainer");
+            outputContainer.AddToClassList("PortContainer");
+
             SetNodeViewData(_btNode.NodeViewData);
             HighlightRunning(_btNode.Status);
         }
@@ -70,6 +70,9 @@ namespace UnityBehaviorTree.Editor.View
                 AddInputPort(port.InputPortCapacity);
             if (port.HasOutputPort)
                 AddOutputPort(port.OutputPortcapacity);
+
+            // type
+            titleContainer.Add(new Label(string.Format("<< {0} >>", _btNode.GetNodeType())));
         }
 
         private void SetTitle(NodeViewData data)

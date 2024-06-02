@@ -146,7 +146,7 @@ namespace UnityBehaviorTree.Core
         
         public void ResetRunningData()
         {
-            _blackboard.ResetData();
+            _blackboard?.ResetData();
             foreach (var node in _nodes)
             {
                 node.ResetRunningData();
